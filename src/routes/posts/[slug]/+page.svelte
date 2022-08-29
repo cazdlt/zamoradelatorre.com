@@ -5,7 +5,7 @@
 	let { title } = data.metadata;
 </script>
 
-<article>
+<article class="prose prose-slate">
 	<h2>{title}</h2>
 	<Post />
 </article>
