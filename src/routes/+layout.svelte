@@ -4,12 +4,16 @@
 	import '../app.css';
 </script>
 
-<div class="grid grid-cols-5 grid-flow-col gap-4">
-	<div class="col-span-1">
+<div class="grid grid-cols-8 grid-flow-col gap-0 min-h-screen w-screen text-dark font-sans">
+	<div class="col-span-2">
 		<Sidebar />
 	</div>
-	<div>
+	<div class = "bg-white min-w-full col-span-6">
         <slot />
         <Footer />
 	</div>
 </div>
+
+<style>
+	@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro");
+</style>

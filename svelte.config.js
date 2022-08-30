@@ -14,12 +14,15 @@ const config = {
 		}),
 		mdsvex({
 			extensions: ['.md'],
-			smartypants: true,
+			smartypants: true
 		})
 	],
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		prerender: {
+			default: true
+		}
 	}
 };
 
