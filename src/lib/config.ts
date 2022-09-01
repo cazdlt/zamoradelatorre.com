@@ -1,12 +1,16 @@
 type Site = {
 	author: {
 		name: string,
-		job?: string
+		fullName: string,
+		job?: string,
+		email: string,
 	}
 }
 
 export const site: Site = {
 	author: {
-		name: 'Andrés Zamora'
+		name: 'Andrés Zamora',
+		fullName: "Camilo Andrés Zamora de la Torre",
+		email: "cazdlt@gmail.com"
 	}
 };
