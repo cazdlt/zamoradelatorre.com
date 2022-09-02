@@ -4,8 +4,8 @@
 	const current_year = new Date().getFullYear();
 </script>
 
-<footer class="text-center h-auto text-xs p-4">
-	<hr class="my-2" />
+<footer class="text-center h-auto text-xs px-4 mt-4">
+	<hr class="py-2" />
 	<Socials />
 	<div class="flex flex-col space-y-1">
 		<span class="font-bold">
