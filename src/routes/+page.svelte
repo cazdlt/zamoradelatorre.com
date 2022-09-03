@@ -2,26 +2,26 @@
 	const pages = [
 		{
 			url: '/blog',
-			img: '/img/home/canaletal.jpg',
-			description: 'Canaletal, Bolívar',
+			img: '/img/home/cocuy.jpg',
+			description: 'PNN El Cocuy',
 			title: 'Blog'
 		},
 		{
 			url: '/proyectos',
-			img: '/img/home/iglesia.jpg',
+			img: '/img/home/canaletal.jpg',
 			description: 'Canaletal, Bolívar',
 			title: 'Proyectos'
 		},
 		{
 			url: '/about',
-			img: '/img/home/norosi.jpg',
-			description: 'Norosí, Bolívar',
+			img: '/img/home/iglesia.jpg',
+			description: 'Canaletal, Bolívar',
 			title: 'Acerca de'
 		},
 		{
 			url: '/contacto',
-			img: '/img/home/cocuy.jpg',
-			description: 'PNN El Cocuy',
+			img: '/img/home/norosi.jpg',
+			description: 'Norosí, Bolívar',
 			title: 'Contacto'
 		}
 	];
