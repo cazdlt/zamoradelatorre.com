@@ -1,19 +1,24 @@
+import type { PostMetadata, Post } from '$lib/types/post';
 
-  export const getBlogPosts = async () => {
-    const allPostFiles = import.meta.glob('/src/routes/blog/*.md')
-    const iterablePostFiles = Object.entries(allPostFiles)
-    
-    const allPosts = await Promise.all(
-      iterablePostFiles.map(async ([path, resolver]) => {
-        const { metadata } = await resolver()
-        const postPath = path.slice(11, -3)
-  
-        return {
-          meta: metadata,
-          path: postPath,
-        }
-      })
-    )
-  
-    return allPosts
-  }
+type postGlobFiles = {
+	[key: string]: () => Promise<unknown>;
+};
+export const resolvePostFiles = async (allPostFiles: postGlobFiles) => {
+	const allPosts = await Promise.all(
+		Object.entries(allPostFiles).map(async ([path, resolver]) => {
+			const { metadata }: { metadata: PostMetadata } = await resolver();
+			const postPath = path.slice(11, -3);
+
+			const post: Post = {
+				path: postPath,
+				...metadata,
+				date: new Date(metadata.date)
+			};
+
+			return post;
+		})
+	);
+
+	const sortedPosts = allPosts.sort((a, b) => b.date.getTime() - a.date.getTime());
+	return sortedPosts;
+};
