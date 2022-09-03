@@ -8,12 +8,16 @@
 	<div class="col-span-1">
 		<Sidebar />
 	</div>
-	<div class = "bg-white w-full col-span-3 px-8 my-4">
-        <slot />
-        <Footer />
+	<div class="bg-white w-full col-span-3 px-8 my-2">
+		<div class="my-2">
+			<slot />
+		</div>
+		<div class="my-2">
+			<Footer />
+		</div>
 	</div>
 </div>
 
 <style>
-	@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro");
+	@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro');
 </style>
