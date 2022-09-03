@@ -1,14 +1,5 @@
-type Site = {
-	author: {
-		name: string;
-		fullName: string;
-		job?: string;
-		email: string;
-		socials: {
-			[key: string]: string;
-		};
-	};
-};
+import type { PageDefinition } from '$lib/types/page';
+import type { Site } from '$lib/types/site';
 
 export const site: Site = {
 	author: {
@@ -25,3 +16,43 @@ export const site: Site = {
 		}
 	}
 };
+
+export const pages: PageDefinition[] = [
+	{
+		title: 'home',
+		path: '/',
+		level: 0
+	},
+	{
+		title: 'blog',
+		path: '/blog',
+		level: 0
+	},
+	{
+		title: 'projects',
+		path: '/projects',
+		level: 0
+	},
+	{
+		title: 'about',
+		path: '/about',
+		level: 0
+	},
+	{
+		title: 'contact',
+		path: '/contact',
+		level: 0
+	},
+	{
+		title: 'archive',
+		path: '/archive',
+		level: 1,
+		onlyShowIn: ["/tags", "/blog", "/projects"]
+	},
+	{
+		title: 'tags',
+		path: '/tags',
+		onlyShowIn: ["/archive", "/blog", "/projects"],
+		level: 1
+	}
+];

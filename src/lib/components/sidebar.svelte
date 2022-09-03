@@ -1,44 +1,22 @@
 <script lang="ts">
-	import { base } from '$app/paths';
-	import { page } from '$app/stores';
+	import SidebarPageList from './sidebarPageList.svelte';
 	import { site } from '$lib/config';
+	import { page } from '$app/stores';
+	import { pages } from '$lib/config';
+	import type { PageDefinition } from '$lib/types/page';
 
-	const base_url = '/';
-	let pages = [
-		{ title: 'home', path: base_url },
-		{ title: 'blog', path: '/blog' },
-		{ title: 'projects', path: '/projects' },
-		{ title: 'about', path: '/about' },
-		{ title: 'contact', path: '/contact' }
-	];
+	const mainPages = pages.filter((p) => p.level == 0);
+	const subpages = pages.filter((p) => p.level == 1);
+
 </script>
 
 <div class="bg-light min-h-full px-8 my-auto">
 	<div class="flex flex-col justify-center h-screen text-right">
-		<a href={base_url} class="text-3xl text-primary my-2">{site.author.name.toLowerCase()}</a>
+		<a href="/" class="text-3xl text-primary my-2">{site.author.name.toLowerCase()}</a>
 		{#if 'job' in site.author}
 			<span class="text-sm">{site.author.job?.toLowerCase()}</span>
 		{/if}
-		<ul class="list-none m-0 p-0">
-			{#each pages as pag}
-				{@const is_curr_path = $page.url.pathname == pag.path}
-				<li class="nav-item inline-block text-secondary text-sm">
-					<a
-						class="hover:brightness-125 {is_curr_path ? 'text-primary font-bold' : ''}"
-						href={pag.path}>{pag.title.toLowerCase()}&nbsp</a
-					>
-				</li>
-			{/each}
-		</ul>
+		<SidebarPageList pages={mainPages} />
+		<SidebarPageList pages={subpages} />
 	</div>
 </div>
-
-<style>
-	.nav-item::before {
-		content: '/ ';
-	}
-
-	.nav-item:first-child::before {
-		content: '';
-	}
-</style>
