@@ -7,7 +7,7 @@
 			title: 'Blog'
 		},
 		{
-			url: '/proyectos',
+			url: '/projects',
 			img: '/img/home/canaletal.jpg',
 			description: 'Canaletal, Bolívar',
 			title: 'Proyectos'
@@ -19,7 +19,7 @@
 			title: 'Acerca de'
 		},
 		{
-			url: '/contacto',
+			url: '/contact',
 			img: '/img/home/norosi.jpg',
 			description: 'Norosí, Bolívar',
 			title: 'Contacto'
