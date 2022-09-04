@@ -4,8 +4,13 @@
 
 	export let pages: PageDefinition[];
 
+	$: inOnlyShowIn = (pag: PageDefinition) => {
+		let showIn = pag.onlyShowIn?.map((p) => p.replace('/', ''));
+		return showIn?.includes(currentPath.split('/')[1]);
+	};
+
 	$: currentPath = $page.url.pathname;
-	$: in_current_path = (pag: PageDefinition) => {
+	$: inCurrentPath = (pag: PageDefinition) => {
 		if (pag.path == '/') {
 			return pag.path == currentPath;
 		}
@@ -15,10 +20,10 @@
 
 <ul class="list-none m-0 p-0">
 	{#each pages as pag}
-		{#if !pag.onlyShowIn || pag.onlyShowIn?.includes(currentPath) || in_current_path(pag)}
+		{#if !pag.onlyShowIn || inOnlyShowIn(pag) || inCurrentPath(pag)}
 			<li class="nav-item inline-block text-secondary text-sm">
 				<a
-					class="hover:brightness-150 {in_current_path(pag) ? 'text-primary font-bold' : ''}"
+					class="hover:brightness-150 {inCurrentPath(pag) ? 'text-primary font-bold' : ''}"
 					href={pag.path}
 				>
 					{pag.title.toLowerCase()}&nbsp
