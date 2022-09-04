@@ -2,7 +2,7 @@
 	import type { PageData } from './$types';
 	import * as _ from 'lodash-es';
 	export let data: PageData;
-	import { format } from 'date-fns-tz';
+	import { formatInTimeZone } from 'date-fns-tz';
 
 	let { blog, projects } = data;
 	let posts_by_year = _.groupBy(blog.concat(projects), (p) => p.date.getFullYear());
@@ -25,7 +25,7 @@
 				<ul class="list-none px-12">
 					{#each posts as post}
 						<li class="mx-4 my-2">
-							<span>{format(post.date, 'MMM dd')}</span>
+							<span>{formatInTimeZone(post.date, "UTC",'MMM dd')}</span>
 							<a class="hover:brightness-150 inline-block px-4 text-secondary" href={post.path}>
 								{post.title}
 							</a>
