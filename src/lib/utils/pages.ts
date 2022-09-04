@@ -22,3 +22,21 @@ export const resolvePostFiles = async (allPostFiles: postGlobFiles) => {
 	const sortedPosts = allPosts.sort((a, b) => b.date.getTime() - a.date.getTime());
 	return sortedPosts;
 };
+
+export const getAllProjects = async () => {
+	const allProjectFiles = import.meta.glob('/src/routes/projects/posts/*.md');
+	const allProjects = await resolvePostFiles(allProjectFiles);
+	return { projects: allProjects };
+};
+
+export const getAllBlogPosts = async () => {
+	const allBlogFiles = import.meta.glob('/src/routes/blog/posts/*.md');
+	const allBlogs = await resolvePostFiles(allBlogFiles);
+	return { blog: allBlogs };
+};
+
+export const getAllPosts = async () => {
+	const blogs = await getAllBlogPosts();
+	const projects = await getAllProjects();
+	return { ...blogs, ...projects };
+};
