@@ -1,6 +1,6 @@
 ---
 title: "Test metadata"
-date: 2022-09-01
+date: 2021-07-01
 description: "prueba1!!"
 thumbnail: "img/home/cocuy.jpg"
 ---

@@ -18,9 +18,11 @@
 		{#if !pag.onlyShowIn || pag.onlyShowIn?.includes(currentPath) || in_current_path(pag)}
 			<li class="nav-item inline-block text-secondary text-sm">
 				<a
-					class="hover:brightness-125 {in_current_path(pag) ? 'text-primary font-bold' : ''}"
-					href={pag.path}>{pag.title.toLowerCase()}&nbsp</a
+					class="hover:brightness-150 {in_current_path(pag) ? 'text-primary font-bold' : ''}"
+					href={pag.path}
 				>
+					{pag.title.toLowerCase()}&nbsp
+				</a>
 			</li>
 		{/if}
 	{/each}

@@ -1,21 +1,19 @@
 <script lang="ts">
 	export let tags: string[] = [];
 	export let date: Date;
-
-	function formatDate(date: Date): string {
-		return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
-	}
+	import { formatInTimeZone } from 'date-fns-tz';
 </script>
 
 <div class="text-sm my-1">
-	<span class="inline-block text-secondary">{formatDate(date)}</span>
-
+	<a href="/archive/#{date.getFullYear()}" class="inline-block text-secondary hover:brightness-150">
+		{formatInTimeZone(date, 'UTC', 'yyyy-MM-dd')}
+	</a>
 	{#if tags.length > 0}
 		<span class="inline-block">•</span>
 		<ul class="list-none inline-block">
 			{#each tags as tag}
 				<li class="tag-item inline-block">
-					<a class="text-primary" href="/tags/{tag}">{tag}&nbsp</a>
+					<a class="text-primary hover:brightness-150" href="/tags/{tag}">{tag}&nbsp</a>
 				</li>
 			{/each}
 		</ul>

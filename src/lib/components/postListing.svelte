@@ -9,7 +9,7 @@
 		{#each posts as post}
 			<div class="flex flex-col text-center my-12 items-center">
 				<DateTagList tags={post.tags} date={post.date} />
-				<a class="text-4xl font-bold my-1" href={post.path}>{post.title}</a>
+				<a class="text-4xl font-bold my-1 hover:brightness-150" href={post.path}> {post.title} </a>
 				<span class="text-lg my-1 text-slate-500">{post.description}</span>
 
 				{#if post.thumbnail}
