@@ -9,7 +9,7 @@
 	let sorted_posts_by_year = Object.entries(posts_by_year)
 		.map(([year, posts]) => ({
 			year: parseInt(year),
-			posts: posts
+			posts: _.sortBy(posts, ['date'])
 		}))
 		.sort((a, b) => b.year - a.year);
 </script>
@@ -25,7 +25,7 @@
 				<ul class="list-none px-12">
 					{#each posts as post}
 						<li class="mx-4 my-2">
-							<span>{formatInTimeZone(post.date, "UTC",'MMM dd')}</span>
+							<span>{formatInTimeZone(post.date, 'UTC', 'MMM dd')}</span>
 							<a class="hover:brightness-150 inline-block px-4 text-secondary" href={post.path}>
 								{post.title}
 							</a>

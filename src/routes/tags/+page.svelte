@@ -12,7 +12,7 @@
 			category: c ?? 'untagged',
 			posts: _.sortBy(
 				posts.filter((p) => (c ? p.tags?.includes(c) : !p.tags)),
-				['title']
+				['date']
 			)
 		})),
 		['category']
