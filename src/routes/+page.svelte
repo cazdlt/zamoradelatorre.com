@@ -45,25 +45,29 @@
 	{/each}
 </div>
 
-<style>
+<style lang="postcss">
 	.home-grid {
 		grid-template-columns: repeat(auto-fill, 44%);
 	}
 
-	.grid-item * {
-		transition: all 0.3s;
-	}
+	.grid-item {
+		& * {
+			transition: all 0.3s;
+		}
 
-	.grid-item:hover > img {
-		filter: grayscale(100%) blur(1px);
-	}
+		&:hover {
+			& > img {
+				filter: grayscale(100%) blur(1px);
+			}
 
-	.grid-item:hover > a {
-		background: hsla(0, 0%, 0%, 0.4);
-	}
+			& > a {
+				background: hsla(0, 0%, 0%, 0.4);
+			}
 
-	.grid-item:hover > span,
-	.grid-item:hover > a > span {
-		opacity: 100;
+			& > span,
+			& > a > span {
+				opacity: 100;
+			}
+		}
 	}
 </style>

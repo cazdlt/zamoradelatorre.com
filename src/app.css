@@ -1,5 +1,5 @@
 @import "/src/lib/styles/colors.css";
-@import "/src/lib/styles/prism-theme.css";
+@import "/src/lib/styles/post.css";
 
 @tailwind base;
 @tailwind components;

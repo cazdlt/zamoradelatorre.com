@@ -20,12 +20,14 @@
 	{/if}
 </div>
 
-<style>
-	.tag-item::before {
-		content: '/ ';
-	}
+<style lang="postcss">
+	.tag-item {
+		&::before {
+			content: '/ ';
+		}
 
-	.tag-item:first-child::before {
-		content: '';
+		&:first-child::before {
+			content: '';
+		}
 	}
 </style>

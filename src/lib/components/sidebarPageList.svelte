@@ -33,12 +33,14 @@
 	{/each}
 </ul>
 
-<style>
-	.nav-item::before {
-		content: '/ ';
-	}
+<style lang="postcss">
+	.nav-item {
+		&::before {
+			content: '/ ';
+		}
 
-	.nav-item:first-child::before {
-		content: '';
+		&:first-child::before {
+			content: '';
+		}
 	}
 </style>
