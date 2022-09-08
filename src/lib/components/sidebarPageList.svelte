@@ -10,12 +10,16 @@
 	};
 
 	$: currentPath = $page.url.pathname;
+	$: postType = $page.params.postType
 	$: inCurrentPath = (pag: PageDefinition) => {
 		if (pag.path == '/') {
 			return pag.path == currentPath;
 		}
 		return currentPath.includes(pag.path);
 	};
+	$: doHighlight = (page: PageDefinition) => {
+		return inCurrentPath(page) || page.path.includes(postType)
+	}
 </script>
 
 <ul class="list-none m-0 p-0">

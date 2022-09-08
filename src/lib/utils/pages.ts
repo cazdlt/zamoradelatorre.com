@@ -13,9 +13,10 @@ export const resolvePostFiles = async (allPostFiles: postGlobFiles) => {
 			const pathList = path.split('/');
 			const [postFile] = pathList.slice(-1)[0].split('.');
 			const postBasePath = '/post/';
+			const { type: postType } = metadata;
 
 			const post: Post = {
-				path: postBasePath + postFile,
+				path: postBasePath + postType + '/' + postFile,
 				...metadata,
 				date: new Date(metadata.date)
 			};
@@ -30,7 +31,7 @@ export const resolvePostFiles = async (allPostFiles: postGlobFiles) => {
 
 export const getAllProjects = async () => {
 	const allPosts = await getAllPosts();
-	const allProjects = allPosts.filter((p) => p.type == 'project');
+	const allProjects = allPosts.filter((p) => p.type == 'projects');
 	return { projects: allProjects };
 };
 

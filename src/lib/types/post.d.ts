@@ -6,7 +6,7 @@ export interface PostMetadata {
 	description: string;
 	thumbnail?: string;
 	tags?: string[];
-	type: 'project' | 'blog';
+	type: 'projects' | 'blog';
 }
 
 export interface Post extends PostMetadata {

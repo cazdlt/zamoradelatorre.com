@@ -7,7 +7,7 @@ tags:
     - IBM
     - IAM
 thumbnail: /img/projects/isim.jpg
-type: project
+type: projects
 ---
 
 ## Introduction
