@@ -1,3 +1,5 @@
+import type { ComponentType } from "svelte";
+
 export interface PostMetadata {
 	title: string;
 	date: Date;
@@ -8,4 +10,9 @@ export interface PostMetadata {
 
 export interface Post extends PostMetadata {
 	path: string;
+}
+
+export interface MarkdownPost {
+	metadata: PostMetadata,
+	default: ComponentType
 }

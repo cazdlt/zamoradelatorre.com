@@ -1,12 +1,8 @@
+import { parseMarkdownPost } from '$lib/utils/pages';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ params }) => {
-	const Post = await import(`../${params.slug}.md`);
-	const metadata = Post.metadata;
-	const Component = Post.default;
-
-	return {
-		Component,
-		metadata
-	};
+	const markdownPost = await import(`../${params.slug}.md`);
+	const post = await parseMarkdownPost(markdownPost)
+	return post
 };

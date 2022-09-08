@@ -1,4 +1,4 @@
-import type { PostMetadata, Post } from '$lib/types/post';
+import type { PostMetadata, Post, MarkdownPost } from '$lib/types/post';
 
 type postGlobFiles = {
 	[key: string]: () => Promise<unknown>;
@@ -39,4 +39,19 @@ export const getAllPosts = async () => {
 	const blogs = await getAllBlogPosts();
 	const projects = await getAllProjects();
 	return { ...blogs, ...projects };
+};
+
+export const parseMarkdownPost = async (markdownPost: MarkdownPost) => {
+
+	const metadata: PostMetadata = markdownPost.metadata;
+	const Component = markdownPost.default;
+
+	return {
+		Component,
+		metadata: {
+			...metadata,
+			date: new Date(metadata.date)
+		}
+	};
+
 };
