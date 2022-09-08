@@ -14,3 +14,4 @@ https://huemint.com/website-2/#palette=2f2b2c-f9fffc-74aa70-178add
 
 TODO:
 tema oscuro
+pags de error
