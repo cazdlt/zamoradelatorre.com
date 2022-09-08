@@ -17,16 +17,13 @@ const config = {
 		mdsvex({
 			extensions: ['.md'],
 			smartypants: true,
-			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
 		})
 	],
 
 	kit: {
 		adapter: adapter(),
-		prerender: {
-			default: true
-		}
-	}
+	},
 };
 
 export default config;

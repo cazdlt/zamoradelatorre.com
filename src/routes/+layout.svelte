@@ -2,6 +2,8 @@
 	import Sidebar from '$lib/components/sidebar.svelte';
 	import Footer from '$lib/components/footer.svelte';
 	import '../app.css';
+
+	export const prerender = true;
 </script>
 
 <div class="grid grid-cols-4 grid-flow-col gap-0 min-h-screen w-screen text-dark font-sans">
