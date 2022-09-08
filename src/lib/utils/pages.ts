@@ -42,7 +42,7 @@ export const getAllBlogPosts = async () => {
 };
 
 export const getAllPosts = async (): Promise<Post[]> => {
-	const postFiles = import.meta.glob('/data/posts/*.md');
+	const postFiles = import.meta.glob('../data/posts/*.md');
 	const allPosts = await resolvePostFiles(postFiles);
 	return allPosts;
 };

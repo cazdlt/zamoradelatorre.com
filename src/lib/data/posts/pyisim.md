@@ -276,5 +276,5 @@ Most methods are annotated in the code, so you get code completion while writing
 Consider [buying me a (colombian) coffee](https://www.buymeacoffee.com/cazdlt) or contacting me on [twitter](https://twitter.com/cazdlt)!
 
 <div style="margin: 0 auto; width: 200px;">
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="cazdlt" data-color="#5F7FFF" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000" data-font-color="#fff" data-coffee-color="#fd0"></script>
+<script typex="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="cazdlt" data-color="#5F7FFF" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000" data-font-color="#fff" data-coffee-color="#fd0"></script>
 </div>
