@@ -1,4 +1,4 @@
-import type { ComponentType } from "svelte";
+import type { ComponentType } from 'svelte';
 
 export interface PostMetadata {
 	title: string;
@@ -6,6 +6,7 @@ export interface PostMetadata {
 	description: string;
 	thumbnail?: string;
 	tags?: string[];
+	type: 'project' | 'blog';
 }
 
 export interface Post extends PostMetadata {
@@ -13,6 +14,6 @@ export interface Post extends PostMetadata {
 }
 
 export interface MarkdownPost {
-	metadata: PostMetadata,
-	default: ComponentType
+	metadata: PostMetadata;
+	default: ComponentType;
 }

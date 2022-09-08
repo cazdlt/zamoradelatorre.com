@@ -47,12 +47,12 @@ export const pages: PageDefinition[] = [
 		title: 'archive',
 		path: '/archive',
 		level: 1,
-		onlyShowIn: ["/tags", "/blog", "/projects"]
+		onlyShowIn: ["/tags", "/blog", "/projects", "post"]
 	},
 	{
 		title: 'tags',
 		path: '/tags',
-		onlyShowIn: ["/archive", "/blog", "/projects"],
+		onlyShowIn: ["/archive", "/blog", "/projects","/post"],
 		level: 1
 	}
 ];

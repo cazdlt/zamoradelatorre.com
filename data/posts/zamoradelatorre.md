@@ -6,6 +6,7 @@ tags:
     - web
     - jekyll
 thumbnail: /img/projects/portada_guia.jpg
+type: project
 ---
 
 No quiero tener mi sección de proyectos vacía (mientras finalizo algo de lo que estoy haciendo), entonces se me ocurrió escribir una pequeña demostración de cómo hice esta página, puede que le sirva a alguien más. No será precisamente un tutorial, ni un diario, más bien una *guía de alto nivel* para el proceso de crear un sitio web estático (blog, landing page, portafolio o similar).<sup>no me importa que ya existan cuatrocientas treinta y dos millones de guías similares</sup>

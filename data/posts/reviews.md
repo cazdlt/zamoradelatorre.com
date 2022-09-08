@@ -5,4 +5,5 @@ date: 2021-01-10
 tags: 
     - music
 thumbnail: /img/posts/reviews/promises.webp
+type: blog
 ---

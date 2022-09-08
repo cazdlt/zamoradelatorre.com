@@ -3,9 +3,9 @@
 	import * as _ from 'lodash-es';
 	export let data: PageData;
 	import { formatInTimeZone } from 'date-fns-tz';
+	import type { Post } from '$lib/types/post';
 
-	let { blog, projects } = data;
-	const posts = blog.concat(projects);
+	const { posts } = data;
 	const categories = _.uniq(posts.map((p) => (p.tags ? p.tags : null)).flat());
 	const posts_by_category = _.sortBy(
 		categories.map((c) => ({

@@ -4,8 +4,8 @@
 	export let data: PageData;
 	import { formatInTimeZone } from 'date-fns-tz';
 
-	let { blog, projects } = data;
-	let posts_by_year = _.groupBy(blog.concat(projects), (p) => p.date.getFullYear());
+	const { posts } = data;
+	let posts_by_year = _.groupBy(posts, (p) => p.date.getFullYear());
 	let sorted_posts_by_year = Object.entries(posts_by_year)
 		.map(([year, posts]) => ({
 			year: parseInt(year),

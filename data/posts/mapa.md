@@ -6,6 +6,7 @@ tags:
     - colombia
     - python
 thumbnail: /img/posts/mapa_tr.png
+type: blog
 ---
 
 *este mapa no es de colombia*  
