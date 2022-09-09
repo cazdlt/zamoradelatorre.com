@@ -15,6 +15,7 @@ export const site: Site = {
 			mail: 'cazdlt'
 		},
 		phone: "(+57) 318 560 8181",
+		location: "Bogotá, Colombia"
 	}
 };
 

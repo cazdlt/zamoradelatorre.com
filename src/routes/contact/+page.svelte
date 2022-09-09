@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { site } from '$lib/config';
-	const { phone, email } = site.author;
+	const { phone, email, location } = site.author;
 </script>
 
 <div class="m-12 w-8/12 mx-auto">
 	<h1 class="text-4xl font-bold my-8">Contact</h1>
-	<div class="flex flex-col">
+	<div>
 		<div>
 			<span class="font-bold"> E-mail address:</span>
 			{email}
@@ -13,6 +13,10 @@
 		<div>
 			<span class="font-bold"> Phone number:</span>
 			{phone}
+		</div>
+        <div>
+			<span class="font-bold"> Location:</span>
+			{location}
 		</div>
 	</div>
 
@@ -25,7 +29,7 @@
 	>
 		<span class="font-bold">Leave me a message:</span>
 		<div class="flex leading-8">
-			<label class="w-1/4" for="name">Contact name</label>
+			<label class="w-1/4" for="name">Your name</label>
 			<input
 				class="border-b-2 grow bg-transparent focus:outline-none focus:ring-0"
 				type="text"
@@ -35,7 +39,7 @@
 			/>
 		</div>
 		<div class="flex leading-8">
-			<label class="w-1/4" for="mail">Contact email</label>
+			<label class="w-1/4" for="mail">Your email</label>
 			<input
 				class="border-b-2 grow bg-transparent focus:outline-none focus:ring-0"
 				type="email"
@@ -45,12 +49,12 @@
 			/>
 		</div>
 		<div class="flex leading-8">
-			<label class="w-1/4" for="form-subject">Message</label>
+			<label class="w-1/4" for="form-subject">Your message</label>
 			<textarea
-				class="border-b-2 grow bg-transparent focus:outline-none focus:ring-0"
+				class="border-b-2 grow bg-transparent focus:outline-none focus:ring-0 h-40"
 				id="form-subject"
 				name="mensaje"
-				placeholder="Hello!"
+				placeholder="La calle es una selva de cemento"
 			/>
 		</div>
 		<div class="flex leading-8 justify-end">

@@ -5,6 +5,7 @@ export type Site = {
 		job?: string;
 		email: string;
 		phone?: string;
+		location?: string;
 		socials: {
 			[key: string]: string;
 		};
