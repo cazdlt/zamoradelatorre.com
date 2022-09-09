@@ -13,7 +13,7 @@
 		<ul class="list-none inline-block">
 			{#each tags as tag}
 				<li class="tag-item inline-block">
-					<a class="text-primary hover:brightness-150" href="/tags/{tag}">{tag}&nbsp</a>
+					<a class="text-primary hover:brightness-150" href="/tags#{tag}">{tag}&nbsp</a>
 				</li>
 			{/each}
 		</ul>
