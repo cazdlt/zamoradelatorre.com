@@ -3,6 +3,7 @@
 	import * as _ from 'lodash-es';
 	export let data: PageData;
 	import { formatInTimeZone } from 'date-fns-tz';
+	import PageTitle from '$lib/components/pageTitle.svelte';
 
 	const { posts } = data;
 	let posts_by_year = _.groupBy(posts, (p) => p.date.getFullYear());
@@ -15,7 +16,7 @@
 </script>
 
 <div class="m-12">
-	<h1 class="text-4xl font-bold my-8">Archive</h1>
+	<PageTitle title="Archive" />
 	<div class="timeline relative">
 		{#each sorted_posts_by_year as { year, posts }}
 			<div class="text-left my-8">

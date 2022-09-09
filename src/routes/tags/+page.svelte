@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import * as _ from 'lodash-es';
-	export let data: PageData;
 	import { formatInTimeZone } from 'date-fns-tz';
-	import type { Post } from '$lib/types/post';
+	import PageTitle from '$lib/components/pageTitle.svelte';
 
+	export let data: PageData;
 	const { posts } = data;
 	const categories = _.uniq(posts.map((p) => (p.tags ? p.tags : null)).flat());
 	const posts_by_category = _.sortBy(
@@ -20,7 +20,7 @@
 </script>
 
 <div class="m-12">
-	<h1 class="text-4xl font-bold my-8">Tags</h1>
+	<PageTitle title="Tags" />
 	{#each posts_by_category as { category, posts }}
 		<div class="text-left my-8">
 			<span id={category} class="year relative text-2xl font-bold px-4 text-primary">

@@ -1,10 +1,11 @@
 <script lang="ts">
+	import PageTitle from '$lib/components/pageTitle.svelte';
 	import { site } from '$lib/config';
 	const { phone, email, location } = site.author;
 </script>
 
 <div class="m-12 w-8/12 mx-auto">
-	<h1 class="text-4xl font-bold my-8">Contact</h1>
+	<PageTitle title="Contact" />
 	<div>
 		<div>
 			<span class="font-bold"> E-mail address:</span>
@@ -14,7 +15,7 @@
 			<span class="font-bold"> Phone number:</span>
 			{phone}
 		</div>
-        <div>
+		<div>
 			<span class="font-bold"> Location:</span>
 			{location}
 		</div>
