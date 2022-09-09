@@ -9,7 +9,6 @@ export const site: Site = {
 		socials: {
 			lastfm: 'cazdlt',
 			spotify: 'cazdlt',
-			twitter: 'cazdlt',
 			github: 'cazdlt',
 			linkedin: 'cazdlt',
 			mail: 'cazdlt'
