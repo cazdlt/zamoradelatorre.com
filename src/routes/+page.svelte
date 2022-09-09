@@ -10,19 +10,19 @@
 			url: '/projects',
 			img: '/img/home/canaletal.jpg',
 			description: 'Canaletal, Bolívar',
-			title: 'Proyectos'
+			title: 'Projects'
 		},
 		{
 			url: '/about',
 			img: '/img/home/iglesia.jpg',
 			description: 'Canaletal, Bolívar',
-			title: 'Acerca de'
+			title: 'About'
 		},
 		{
 			url: '/contact',
 			img: '/img/home/norosi.jpg',
 			description: 'Norosí, Bolívar',
-			title: 'Contacto'
+			title: 'Contact'
 		}
 	];
 </script>
