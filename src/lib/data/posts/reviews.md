@@ -6,4 +6,5 @@ tags:
     - music
 thumbnail: /img/posts/reviews/promises.webp
 type: blog
+layout: microreviews
 ---

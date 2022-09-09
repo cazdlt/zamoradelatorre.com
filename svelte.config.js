@@ -17,7 +17,10 @@ const config = {
 		mdsvex({
 			extensions: ['.md'],
 			smartypants: true,
-			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
+			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+			layout:{
+				"article":"./src/lib/components/postLayouts/article.svelte"
+			}
 		})
 	],
 

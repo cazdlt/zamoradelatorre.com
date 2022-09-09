@@ -8,6 +8,7 @@ tags:
     - IAM
 thumbnail: /img/projects/isim.jpg
 type: projects
+layout: article
 ---
 
 ## Introduction

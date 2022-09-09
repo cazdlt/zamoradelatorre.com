@@ -7,6 +7,7 @@ tags:
     - python
 thumbnail: /img/posts/mapa_tr.png
 type: blog
+layout: article
 ---
 
 *este mapa no es de colombia*  

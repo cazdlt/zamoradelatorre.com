@@ -7,6 +7,7 @@ export interface PostMetadata {
 	thumbnail?: string;
 	tags?: string[];
 	type: 'projects' | 'blog';
+	layout: "article" | "microreviews"
 }
 
 export interface Post extends PostMetadata {
