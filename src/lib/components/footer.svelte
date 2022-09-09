@@ -11,7 +11,7 @@
 		<span class="font-bold">
 			{site.author.fullName}
 		</span>
-		<a class="text-secondary" href="/contacto"> {site.author.email} </a>
+		<a class="text-secondary" href="/contact"> {site.author.email} </a>
 		<span>
 			Hecho en el {current_year}, basado en
 			<a href="https://github.com/renyuanz/leonids/tree/leonids-jekyll" target="_blank" rel="noopener noreferrer">
