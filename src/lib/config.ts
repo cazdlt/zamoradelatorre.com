@@ -13,7 +13,8 @@ export const site: Site = {
 			github: 'cazdlt',
 			linkedin: 'cazdlt',
 			mail: 'cazdlt'
-		}
+		},
+		phone: "(+57) 318 560 8181",
 	}
 };
 

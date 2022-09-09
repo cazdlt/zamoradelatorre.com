@@ -19,7 +19,7 @@
 	);
 </script>
 
-<div class="my-12 mx-12">
+<div class="m-12">
 	<h1 class="text-4xl font-bold my-8">Tags</h1>
 	{#each posts_by_category as { category, posts }}
 		<div class="text-left my-8">

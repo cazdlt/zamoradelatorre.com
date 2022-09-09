@@ -14,7 +14,7 @@
 		.sort((a, b) => b.year - a.year);
 </script>
 
-<div class="my-12 mx-12">
+<div class="m-12">
 	<h1 class="text-4xl font-bold my-8">Archive</h1>
 	<div class="timeline relative">
 		{#each sorted_posts_by_year as { year, posts }}

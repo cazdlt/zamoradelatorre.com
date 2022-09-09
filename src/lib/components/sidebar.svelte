@@ -1,9 +1,7 @@
 <script lang="ts">
 	import SidebarPageList from './sidebarPageList.svelte';
 	import { site } from '$lib/config';
-	import { page } from '$app/stores';
 	import { pages } from '$lib/config';
-	import type { PageDefinition } from '$lib/types/page';
 
 	const mainPages = pages.filter((p) => p.level == 0);
 	const subpages = pages.filter((p) => p.level == 1);

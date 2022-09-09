@@ -4,6 +4,7 @@ export type Site = {
 		fullName: string;
 		job?: string;
 		email: string;
+		phone?: string;
 		socials: {
 			[key: string]: string;
 		};
