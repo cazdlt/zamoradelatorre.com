@@ -1,11 +1,16 @@
 <script lang="ts">
 	import PageTitle from '$lib/components/pageTitle.svelte';
+	import Socials from '$lib/components/socials.svelte';
 	import { site } from '$lib/config';
 	const { phone, email, location } = site.author;
+	Socials
 </script>
 
 <div class="m-12 w-8/12 mx-auto">
 	<PageTitle title="Contact" />
+	<div class="text-sm flex flex-row justify-start space-x-4 my-2">
+	<Socials/>
+</div>
 	<div>
 		<div>
 			<span class="font-bold"> E-mail address:</span>

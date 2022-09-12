@@ -40,15 +40,13 @@
 		},
 		mail: {
 			logo: faEnvelope,
-			url: (user) => '/contacto'
+			url: (user) => '/contact'
 		}
 	};
 </script>
 
-<div class="text-sm flex flex-row justify-center space-x-4 my-2">
-	{#each Object.entries(site.author.socials) as [social, user]}
-		<a href={socialMapping[social].url(user)} target="_blank" aria-label="social" rel="noopener">
-			<Fa icon={socialMapping[social].logo} />
-		</a>
-	{/each}
-</div>
+{#each Object.entries(site.author.socials) as [social, user]}
+	<a href={socialMapping[social].url(user)} target="_blank" aria-label="social" rel="noopener">
+		<Fa icon={socialMapping[social].logo} />
+	</a>
+{/each}
