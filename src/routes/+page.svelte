@@ -1,42 +1,20 @@
-<script>
-	const pages = [
-		{
-			url: '/blog',
-			img: '/img/home/cocuy.jpg',
-			description: 'PNN El Cocuy',
-			title: 'Blog'
-		},
-		{
-			url: '/projects',
-			img: '/img/home/canaletal.jpg',
-			description: 'Canaletal, Bolívar',
-			title: 'Projects'
-		},
-		{
-			url: '/about',
-			img: '/img/home/iglesia.jpg',
-			description: 'Canaletal, Bolívar',
-			title: 'About'
-		},
-		{
-			url: '/contact',
-			img: '/img/home/norosi.jpg',
-			description: 'Norosí, Bolívar',
-			title: 'Contact'
-		}
-	];
+<script lang="ts">
+	import { pages } from '$lib/data/site';
+	import type { PageDefinition } from '$lib/types/site';
+	type WithHome = { home: {} };
+	const homePages = pages.filter((p): p is PageDefinition & WithHome => p.home !== undefined);
 </script>
 
 <div class="grid gap-1 place-content-center home-grid pb-2 w-full">
-	{#each pages as page}
+	{#each homePages as page}
 		<div class="relative grid-item">
-			<img alt={page.description} class="h-full w-full object-cover" src={page.img} />
+			<img alt={page.home.description} class="h-full w-full object-cover" src={page.home.img} />
 			<span class="bottom-0 right-0 absolute p-1 opacity-0 text-white text-lg">
-				{page.description}
+				{page.home.description}
 			</span>
 
 			<a
-				href={page.url}
+				href={page.path}
 				class="w-full h-full flex items-center justify-center absolute top-0 left-0"
 			>
 				<span class="opacity-0 text-white font-bold text-3xl"> {page.title} </span>

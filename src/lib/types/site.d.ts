@@ -11,3 +11,14 @@ export type Site = {
 		};
 	};
 };
+
+export type PageDefinition = {
+	title: string;
+	path: string;
+	mainSidebar: boolean;
+	onlyShowIn?: string[];
+	home?: {
+		img: string;
+		description: string;
+	};
+};

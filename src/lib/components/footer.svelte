@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { site } from '$lib/config';
+	import { site } from '$lib/data/site';
 	import Socials from './socials.svelte';
 	const current_year = new Date().getFullYear();
 </script>

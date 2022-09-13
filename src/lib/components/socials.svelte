@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { site } from '$lib/config';
+	import { site } from '$lib/data/site';
 	import Fa from 'svelte-fa';
 	import {
 		faLinkedinIn,

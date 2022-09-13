@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import type { PageDefinition } from '$lib/types/page';
+	import type { PageDefinition } from '$lib/types/site';
 
 	export let pages: PageDefinition[];
 

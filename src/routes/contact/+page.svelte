@@ -1,7 +1,7 @@
 <script lang="ts">
 	import PageTitle from '$lib/components/pageTitle.svelte';
 	import Socials from '$lib/components/socials.svelte';
-	import { site } from '$lib/config';
+	import { site } from '$lib/data/site';
 	const { phone, email, location } = site.author;
 	Socials
 </script>
