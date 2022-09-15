@@ -3,7 +3,7 @@
 	import DateTagList from '$lib/components/dateTagList.svelte';
 	export let data: PageData;
 
-	const { Component, metadata } = data;
+	const { PostComponent, PostLayout, metadata } = data;
 	let { title, description, date, tags } = metadata;
 </script>
 
@@ -15,6 +15,8 @@
 			<span class="my-4 text-slate-500">{description}</span>
 			<hr class="my-12" />
 		</div>
-		<Component />
+		<PostLayout>
+			<PostComponent />
+		</PostLayout>
 	</div>
 </div>

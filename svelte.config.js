@@ -17,11 +17,7 @@ const config = {
 		mdsvex({
 			extensions: ['.md'],
 			smartypants: true,
-			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
-			layout: {
-				article: './src/lib/components/postLayouts/article.svelte',
-				microreviews: './src/lib/components/postLayouts/microreviews.svelte'
-			}
+			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
 		})
 	],
 

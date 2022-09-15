@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { reviews2021 } from '$lib/data/reviews';
 	import Fa from 'svelte-fa';
 	import { faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
@@ -6,7 +6,7 @@
 
 	const sortedReviews = reviews2021.reverse();
 
-	const getStars = (score) => {
+	const getStars = (score: number) => {
 		const number = Math.max(0, Math.min(10, score));
 		return Array(10)
 			.fill(0)

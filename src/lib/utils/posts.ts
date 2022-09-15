@@ -1,4 +1,5 @@
 import type { PostMetadata, Post, MarkdownPost } from '$lib/types/post';
+import type { ComponentType } from 'svelte';
 
 type postGlobFiles = {
 	[key: string]: () => Promise<unknown>;
@@ -49,10 +50,12 @@ export const getAllPosts = async (): Promise<Post[]> => {
 
 export const parseMarkdownPost = async (markdownPost: MarkdownPost) => {
 	const metadata: PostMetadata = markdownPost.metadata;
-	const Component = markdownPost.default;
-
+	const layout = await import (`../components/postLayouts/${metadata.layout}.svelte`)
+	const PostComponent = markdownPost.default;
+	const PostLayout: ComponentType = layout.default
 	return {
-		Component,
+		PostComponent,
+		PostLayout,
 		metadata: {
 			...metadata,
 			date: new Date(metadata.date)
