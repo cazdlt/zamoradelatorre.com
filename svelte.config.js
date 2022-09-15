@@ -18,15 +18,16 @@ const config = {
 			extensions: ['.md'],
 			smartypants: true,
 			rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
-			layout:{
-				"article":"./src/lib/components/postLayouts/article.svelte"
+			layout: {
+				article: './src/lib/components/postLayouts/article.svelte',
+				microreviews: './src/lib/components/postLayouts/microreviews.svelte'
 			}
 		})
 	],
 
 	kit: {
-		adapter: adapter(),
-	},
+		adapter: adapter()
+	}
 };
 
 export default config;
