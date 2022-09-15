@@ -9,7 +9,8 @@ type Microreview = {
 	date: string;
 };
 
-export const reviews2021: Microreview[] = [
+
+const reviews2021: Microreview[] = [
 	{
 		album: 'Voltaje Raizal',
 		artist: 'Rizomagic',
@@ -685,3 +686,7 @@ export const reviews2021: Microreview[] = [
 		date: 'Diciembre 26'
 	}
 ];
+
+export const allReviews: {[key: string]: Microreview[]} = {
+	'2021': reviews2021
+};

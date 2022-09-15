@@ -15,7 +15,7 @@
 			<span class="my-4 text-slate-500">{description}</span>
 			<hr class="my-12" />
 		</div>
-		<PostLayout>
+		<PostLayout {metadata}>
 			<PostComponent />
 		</PostLayout>
 	</div>
