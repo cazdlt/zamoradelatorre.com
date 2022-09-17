@@ -1,8 +1,12 @@
 <script lang="ts">
-	import { pages } from '$lib/data/site';
 	import type { PageDefinition } from '$lib/types/site';
+	import { pages } from '$lib/data/site';
+	import { title } from '$lib/stores/title';
+
 	type WithHome = { home: {} };
 	const homePages = pages.filter((p): p is PageDefinition & WithHome => p.home !== undefined);
+
+	title.set('Home');
 </script>
 
 <div class="grid gap-1 place-content-center home-grid pb-2 w-full">

@@ -5,6 +5,9 @@
 
 	const { PostComponent, PostLayout, metadata } = data;
 	let { title, description, date, tags } = metadata;
+
+	import { title as headTitle } from '$lib/stores/title';
+	headTitle.set(metadata.title);
 </script>
 
 <div>
