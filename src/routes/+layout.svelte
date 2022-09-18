@@ -10,7 +10,7 @@
 <Head />
 
 <div class="grid grid-cols-4 grid-flow-col gap-0 min-h-screen w-screen text-dark font-sans">
-	<div class="col-span-1">
+	<div class="col-span-1 sticky top-0 h-screen">
 		<Sidebar />
 	</div>
 	<div class="bg-white w-full col-span-3 px-8 my-2">

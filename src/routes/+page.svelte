@@ -9,7 +9,7 @@
 	title.set('Home');
 </script>
 
-<div class="grid gap-1 place-content-center home-grid pb-2 w-full">
+<div class="home-grid pb-2 w-full">
 	{#each homePages as page}
 		<div class="relative grid-item">
 			<img alt={page.home.description} class="h-full w-full object-cover" src={page.home.img} />
@@ -29,7 +29,10 @@
 
 <style lang="postcss">
 	.home-grid {
-		grid-template-columns: repeat(auto-fill, 44%);
+		display: grid;
+		gap: 0.25rem;
+		grid-template-columns: repeat(auto-fill, 45%);
+		place-content: center;
 	}
 
 	.grid-item {
