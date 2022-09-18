@@ -1,7 +1,14 @@
 :root {
+
+	/* colors */
 	--primary-color: #d45143;
 	--secondary-color: #186688;
 	--dark-color: #37414f;
 	--light-color: #edeae5;
 	--white-color: #fffef9;
+
+	/* screen sizes */
+	--small-screen: 640px
+	--medium-screen: 768px
+	--large-screen: 1024px
 }
