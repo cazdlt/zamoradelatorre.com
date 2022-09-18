@@ -1,10 +1,8 @@
-<script>
-	import '../../lib/styles/prism-theme.css';
-</script>
-
 <slot />
 
 <style global lang="postcss">
+	@import '../../lib/styles/prism-theme.css';
+
 	h1,
 	h2 {
 		.icon-link {
