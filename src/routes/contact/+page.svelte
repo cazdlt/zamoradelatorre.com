@@ -29,11 +29,9 @@
 		class="flex flex-col w-full gap-4 py-4"
 		name="contact"
 		method="POST"
-		netlify-honeypot="bot-field"
-		data-netlify="true"
+		netlify
 	>
 		<input type="hidden" name="form-name" value="contact" />
-		<input class="hidden" name="bot-field" />
 		<span class="font-bold">Leave me a message:</span>
 		<div class="flex leading-8">
 			<label class="w-1/4" for="name">Your name</label>
