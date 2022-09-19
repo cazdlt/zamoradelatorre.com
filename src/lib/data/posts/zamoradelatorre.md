@@ -20,7 +20,7 @@ Cualquier duda, inquetud, sugerencia, cumplido, saludo, abrazo, me pueden escrib
 <!-- <sup>sé que la portada es la pantalla de una pantalla de una pantalla</sup> -->
 
 ## ¿por qué?
-Hace un par de años mi mamá ha estado trabajando en algunos proyectos independientes a su trabajo *de oficina*, para conseguir ingresos adicionales. Dentro de ese tiempo, habló con alguien de su empresa, quien le recomendó montar una página web para darle más visibilidad a sus servicios. Ella inmediatamente compró su propio dominio, [kolibrika.co](kolibrika.co), con la promesa de que las personas de tecnología y de digital de esta empresa le ayudarían. Un año después el sitio aún no existe. 
+Hace un par de años mi mamá ha estado trabajando en algunos proyectos independientes a su trabajo *de oficina*, para conseguir ingresos adicionales. Dentro de ese tiempo, habló con alguien de su empresa, quien le recomendó montar una página web para darle más visibilidad a sus servicios. Ella inmediatamente compró su propio dominio, [kolibrika.co](https://kolibrika.co), con la promesa de que las personas de tecnología y de digital de esta empresa le ayudarían. Un año después el sitio aún no existe. 
 
 Yo, con el interés de demostrarle que no es tan difícil y podría ayudarle, creé un sitio web sencillo (y feo) y lo subí a [Github Pages](https://pages.github.com/), el cual es un excelente servicio. Pocó después compré el dominio (que no me gusta del todo) y decidí convertirlo en mi propio sitio personal. No espero mucho de la página, puede que me sirva de inspiración para hacer nuevos proyectos y crear algo de contenido, además de darlo algo de visibilidad a mi perfil. Además, el dominio me sirve para subir una que otra aplicación web que se me ocurra.
 
@@ -69,7 +69,7 @@ Además, necesitamos un nombre para el sitio. La forma más fácil (y barata) qu
 Acá, simplemente se busca la URL que queremos para nuestro sitio (por ejemplo: misitio) y la página nos mostrará el precio y disponibilidad de este.
 <img src="/img/projects/namecheap.jpg" alt="compra de dominio">
 
-El dominio que tengo actualmente ([zamoradelatorre.com](zamoradelatorre.com)) me costó aproximadamente $35000 (o $9 USD) por año.
+El dominio que tengo actualmente ([zamoradelatorre.com](https://zamoradelatorre.com)) me costó aproximadamente $35000 (o $9 USD) por año.
 
 Después de esto, es necesario seguir las instrucciones del proveedor de *hosting* (en mi experiencia para Github Pages y Netlify ha sido fácil) para enlazar la página con el nombre que compramos.
 

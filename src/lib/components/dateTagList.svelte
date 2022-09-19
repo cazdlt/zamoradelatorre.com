@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let tags: string[] = [];
 	export let date: Date;
-	import { formatInTimeZone } from 'date-fns-tz';
+	import { formatInTimeZone } from 'date-fns-tz/esm';
 </script>
 
 <div class="text-sm my-1">

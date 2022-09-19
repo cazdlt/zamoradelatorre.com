@@ -2,7 +2,7 @@
 	import type { PageData } from './$types';
 	import * as _ from 'lodash-es';
 	export let data: PageData;
-	import { formatInTimeZone } from 'date-fns-tz';
+	import { formatInTimeZone } from 'date-fns-tz/esm';
 	import PageTitle from '$lib/components/pageTitle.svelte';
 
 	const { posts } = data;
