@@ -25,13 +25,8 @@
 		</div>
 	</div>
 
-	<form
-		id="form"
-		class="flex flex-col w-full gap-4 py-4"
-		name="contacto"
-		method="POST"
-		data-netlify="true"
-	>
+	
+<form class="flex flex-col w-full gap-4 py-4" name="contact" netlify>
 		<span class="font-bold">Leave me a message:</span>
 		<div class="flex leading-8">
 			<label class="w-1/4" for="name">Your name</label>
