@@ -386,7 +386,7 @@ const reviews2021: Microreview[] = [
 	{
 		album: 'CALL ME IF YOU GET LOST',
 		artist: 'Tyler, The Creator',
-		cover: 'cmiygl.gif',
+		cover: 'cmiygl.webp',
 		year: 2021,
 		score: 7,
 		review: 'lo escuché en desorden y así me gustó',
