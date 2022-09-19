@@ -7,13 +7,4 @@
 	--light-color: #edeae5;
 	--white-color: #fffef9;
 
-	/* screen sizes */
-	--small-screen: 640px
-	--medium-screen: 768px
-	--large-screen: 1024px
 }
-
-@custom-media --small-viewport (max-width: 640px);
-@custom-media --medium-viewport (max-width: 768px);
-@custom-media --large-viewport (max-width: 1024px);
-@custom-media --larger-viewport (max-width: 1280px);
