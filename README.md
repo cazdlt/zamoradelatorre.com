@@ -16,4 +16,4 @@ TODO:
 tema oscuro
 pags de error
 SEO
-optimizar imágenes
+finish optimizar imágenes
