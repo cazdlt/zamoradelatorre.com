@@ -9,7 +9,7 @@
 	title.set('Home');
 </script>
 
-<div class="grid gap-1 place-content-center home-grid pb-2 w-full">
+<div class="home-grid pb-2 max-w-[1200px] mx-auto">
 	{#each homePages as page}
 		<div class="relative grid-item">
 			<img alt={page.home.description} class="h-full w-full object-cover" src={page.home.img} />
@@ -29,25 +29,45 @@
 
 <style lang="postcss">
 	.home-grid {
-		grid-template-columns: repeat(auto-fill, 44%);
+		display: grid;
+		gap: 0.5rem;
+		grid-template-columns: 1fr;
+		place-content: center;
+		@media screen(lg) {
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 
 	.grid-item {
-		& * {
+		@media (hover: none) {
+			* span {
+				opacity: 1;
+			}
+
+			img {
+				filter: blur(1px);
+			}
+
+			a {
+				background: hsla(0, 0%, 0%, 0.5);
+			}
+		}
+
+		* {
 			transition: all 0.3s;
 		}
 
 		&:hover {
-			& > img {
+			img {
 				filter: grayscale(100%) blur(1px);
 			}
 
-			& > a {
+			a {
 				background: hsla(0, 0%, 0%, 0.4);
 			}
 
-			& > span,
-			& > a > span {
+			span,
+			a span {
 				opacity: 100;
 			}
 		}

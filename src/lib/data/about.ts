@@ -1,6 +1,7 @@
 export const about = {
 	summary: 'Camilo Andrés Zamora de la Torre, 26, Colombiano',
 	descriptionItems: [
+		'Científico de datos actualmente trabajando en Mercadolibre',
 		'Ingeniero electrónico que nunca supo qué estudiar',
 		'Le gusta la música',
 		'Practica varios instrumentos, pero ninguno muy bien',
@@ -8,28 +9,37 @@ export const about = {
 		'Nació en Cali, vive en Bogotá',
 		'Tiene dos gatos',
 		'Camina lento pero se mueve en bicicleta',
-		'Científico de datos actualmente trabajando en Mercadolibre'
+		'Vio dos clases de japonés en la universidad'
 	],
 	learning: [
 		{
-			what: 'Deep Learning (NYU Lecun / Canziani)',
+			what: 'Deep Learning + Reinforcement Learning',
 			why: [
-				'Scheduler para red con SIC Cooperativo',
-				'Bot de Tetris NES',
-				'Separación de instrumentos'
+				'Bot de NES Tetris',
+				'Modelos generativos de música',
+				'Detección de deepfakes',
+				'RL para cadena de suministro (pricing, replenishment)'
 			]
 		},
 		{
-			what: 'React.js + Next.js',
+			what: 'IoT',
 			why: [
-				'Visualizaciones para Last.fm',
-				'Mezclar playlist y <i>true random</i> en Spotify',
-				'kolibrika.co'
+				'Sistema de autoregado y monitoreo de plantas para la casita en Paipa, Boyacá',
+				'Ideas de negocio alrededor de agrotech y smart homes hay bastantes',
+				'Aplicaciones de visión por computador',
+			]
+		},
+		{
+			what: 'Front-end (Svelte)',
+			why: [
+				'Para reemplazar mi vieja página de Jekyll con una igual como esta :^)',
+				'Poder considerarme fullstack',
+				'kolibrika.co + proyectos web'
 			]
 		},
 		{
 			what: 'Flutter',
-			why: ['Es increíble que no hayan apps gratis buenas para rutinas de bodyweight']
+			why: ['Eventualmente tendré que hacer una aplicación móvil']
 		}
 	],
 	frases: [

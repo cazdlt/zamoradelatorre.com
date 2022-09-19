@@ -245,7 +245,7 @@ const reviews2021: Microreview[] = [
 	{
 		album: 'Hypnic Jerks',
 		artist: 'The Spirit of the Beehive',
-		cover: 'Hypnic Jerks.webp',
+		cover: 'hypnic jerks.webp',
 		year: 2018,
 		score: 6,
 		review: 'what is hypnagogic pop even supposed to mean',
