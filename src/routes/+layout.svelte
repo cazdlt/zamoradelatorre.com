@@ -3,8 +3,6 @@
 	import Footer from '$lib/components/footer.svelte';
 	import Head from '$lib/components/Head.svelte';
 	import '../app.css';
-
-	export const prerender = true;
 </script>
 
 <Head />
