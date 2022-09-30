@@ -13,20 +13,26 @@
 		<span class="font-bold">
 			{site.author.fullName}
 		</span>
-		<a class="text-secondary" href="/contact"> {site.author.email} </a>
+		<a class="text-secondary w-fit mx-auto hover:brightness-150" href="/contact">
+			{site.author.email}
+		</a>
 		<span>
-			Hecho en el {current_year}, basado en
+			<a href="https://github.com/cazdlt/zamoradelatorre.com" class="text-primary hover:brightness-150">
+				Hecho en el {current_year}
+			</a>
+			, basado en
 			<a
 				href="https://github.com/renyuanz/leonids/tree/leonids-jekyll"
 				target="_blank"
 				rel="noopener noreferrer"
+				class="text-primary hover:brightness-150"
 			>
 				leonids theme.
 			</a>
 
 			Usando
 			<a
-				class="inline-block text-[#ff3e00]"
+				class="inline-block text-[#ff3e00] hover:brightness-150"
 				href="https://kit.svelte.dev/"
 				target="_blank"
 				rel="noopener noreferrer"
