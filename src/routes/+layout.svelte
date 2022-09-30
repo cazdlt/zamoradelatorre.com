@@ -11,8 +11,8 @@
 	<div class="lg:sticky lg:top-0 lg:h-screen min-w-fit min-h-max">
 		<Sidebar />
 	</div>
-	<div class="bg-white w-full px-8 my-2">
-		<div class="my-2">
+	<div class="bg-white w-full px-8">
+		<div class="">
 			<slot />
 		</div>
 		<div class="my-2">

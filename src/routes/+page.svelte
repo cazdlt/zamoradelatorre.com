@@ -9,11 +9,11 @@
 	title.set('Home');
 </script>
 
-<div class="home-grid pb-2 max-w-[1200px] mx-auto">
+<div class="home-grid xl:px-24 py-2 max-w-[1200px] mx-auto min-h-screen">
 	{#each homePages as page}
 		<div class="relative grid-item">
 			<img alt={page.home.description} class="h-full w-full object-cover" src={page.home.img} />
-			<span class="bottom-0 right-0 absolute p-1 opacity-0 text-white text-lg">
+			<span class="bottom-0 right-0 absolute p-1 opacity-0 text-white text-lg px-2">
 				{page.home.description}
 			</span>
 
@@ -32,15 +32,19 @@
 		display: grid;
 		gap: 0.5rem;
 		grid-template-columns: 1fr;
+		grid-auto-rows: 1fr;
 		place-content: center;
+
 		@media screen(lg) {
 			grid-template-columns: 1fr 1fr;
+			grid-auto-rows: auto;
 		}
 	}
 
 	.grid-item {
 		@media (hover: none) {
-			* span {
+			span,
+			a span {
 				opacity: 1;
 			}
 
