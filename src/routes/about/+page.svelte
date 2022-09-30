@@ -16,7 +16,7 @@
 	};
 </script>
 
-<div class="m-12 w-max">
+<div class="m-12">
 	<PageTitle title="About" />
 	<div class="italic">{summary}</div>
 
