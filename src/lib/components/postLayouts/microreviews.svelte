@@ -17,7 +17,7 @@
 	};
 </script>
 
-<div class="gallery mb-16 px-12">
+<div class="gallery mb-16 px-4 md:px-12">
 	{#each reviews as review, idx}
 		<div class="w-full text-center p-4 border-b-2 border-gray-200">
 			<img

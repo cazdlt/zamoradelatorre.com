@@ -5,7 +5,7 @@
 	const { phone, email, location } = site.author;
 </script>
 
-<div class="m-12 w-8/12 mx-auto">
+<div class="my-12 md:w-8/12 mx-auto px-4">
 	<PageTitle title="Contact" />
 	<div class="text-md flex flex-row justify-start space-x-6 my-8">
 		<Socials />

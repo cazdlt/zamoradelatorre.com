@@ -15,7 +15,7 @@
 		.sort((a, b) => b.year - a.year);
 </script>
 
-<div class="m-12">
+<div class="m-4 md:m-12">
 	<PageTitle title="Archive" />
 	<div class="timeline relative">
 		{#each sorted_posts_by_year as { year, posts }}
@@ -23,7 +23,7 @@
 				<span id={year.toString()} class="year relative text-2xl font-bold px-4 text-primary">
 					{year}
 				</span>
-				<ul class="list-none px-12">
+				<ul class="list-none px-4 md:px-12">
 					{#each posts as post}
 						<li class="mx-4 my-2">
 							<span>{formatInTimeZone(post.date, 'UTC', 'MMM dd')}</span>
