@@ -19,14 +19,14 @@
 	);
 </script>
 
-<div class="m-12">
+<div class="m-4 md:m-12">
 	<PageTitle title="Tags" />
 	{#each posts_by_category as { category, posts }}
 		<div class="text-left my-8">
 			<span id={category} class="year relative text-2xl font-bold px-4 text-primary">
 				{category}
 			</span>
-			<ul class="list-none px-12">
+			<ul class="list-none px-4 md:px-12">
 				{#each posts as post}
 					<li class="mx-4 my-2">
 						<span>{formatInTimeZone(post.date, 'UTC', 'yyyy-MM-dd')}</span>

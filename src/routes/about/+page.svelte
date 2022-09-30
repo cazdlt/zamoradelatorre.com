@@ -16,7 +16,7 @@
 	};
 </script>
 
-<div class="m-12">
+<div class="m-4 md:m-12">
 	<PageTitle title="About" />
 	<div class="italic">{summary}</div>
 
