@@ -8,9 +8,7 @@ type postGlobFiles = {
 export const resolvePostFiles = async (allPostFiles: postGlobFiles) => {
 	const allPosts = await Promise.all(
 		Object.entries(allPostFiles).map(async ([path, resolver]) => {
-			// eslint-disable-next-line
-			// @ts-ignore
-			const { metadata }: { metadata: PostMetadata } = await resolver();
+			const { metadata } = await resolver();
 			const pathList = path.split('/');
 			const [postFile] = pathList.slice(-1)[0].split('.');
 			const postBasePath = '/post/';
