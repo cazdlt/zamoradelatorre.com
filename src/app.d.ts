@@ -7,3 +7,6 @@ declare namespace App {
 	// interface PrivateEnv {}
 	// interface PublicEnv {}
 }
+
+
+declare module 'date-fns-tz/esm';

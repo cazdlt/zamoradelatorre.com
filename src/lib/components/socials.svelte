@@ -46,7 +46,7 @@
 </script>
 
 {#each Object.entries(site.author.socials) as [social, user]}
-	<a href={socialMapping[social].url(user)} target="_blank" aria-label="social" rel="noopener">
+	<a href={socialMapping[social].url(user)} target="_blank" aria-label="social" rel="noreferrer">
 		<Fa icon={socialMapping[social].logo} />
 	</a>
 {/each}

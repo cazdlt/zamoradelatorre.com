@@ -24,7 +24,7 @@
 			<a
 				href="https://github.com/renyuanz/leonids/tree/leonids-jekyll"
 				target="_blank"
-				rel="noopener noreferrer"
+				rel="noreferrer"
 				class="text-primary hover:brightness-150"
 			>
 				leonids theme.
@@ -35,7 +35,7 @@
 				class="inline-block text-[#ff3e00] hover:brightness-150"
 				href="https://kit.svelte.dev/"
 				target="_blank"
-				rel="noopener noreferrer"
+				rel="noreferrer"
 			>
 				SvelteKit.
 			</a>
