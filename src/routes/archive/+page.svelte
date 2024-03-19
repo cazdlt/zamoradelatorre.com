@@ -2,7 +2,7 @@
 	import type { PageData } from './$types';
 	import * as _ from 'lodash-es';
 	export let data: PageData;
-	import { formatInTimeZone } from 'date-fns-tz/esm';
+	import { format } from 'date-fns';
 	import PageTitle from '$lib/components/pageTitle.svelte';
 
 	const { posts } = data;
@@ -26,7 +26,7 @@
 				<ul class="list-none px-4 md:px-12">
 					{#each posts as post}
 						<li class="mx-4 my-2">
-							<span>{formatInTimeZone(post.date, 'UTC', 'MMM dd')}</span>
+							<span>{format(post.date, 'MMM dd')}</span>
 							<a class="hover:brightness-150 inline-block px-4 text-secondary" href={post.path}>
 								{post.title}
 							</a>
