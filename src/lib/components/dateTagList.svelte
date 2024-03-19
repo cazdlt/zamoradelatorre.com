@@ -1,12 +1,12 @@
 <script lang="ts">
 	export let tags: string[] = [];
 	export let date: Date;
-	import { formatInTimeZone } from 'date-fns-tz/esm';
+	import { format } from 'date-fns';
 </script>
 
 <div class="text-sm my-1">
 	<a href="/archive/#{date.getFullYear()}" class="inline-block text-secondary hover:brightness-150">
-		{formatInTimeZone(date, 'UTC', 'yyyy-MM-dd')}
+		{format(date, 'yyyy-MM-dd')}
 	</a>
 	{#if tags.length > 0}
 		<span class="inline-block">•</span>
