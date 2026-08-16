@@ -12,6 +12,14 @@
 	</div>
 	<div>
 		<div class="flex md:flex-row flex-col md:gap-1 py-2">
+			<span class="font-bold"> CV:</span>
+			<span class="flex flex-row gap-4">
+				<a class="text-secondary underline" href="/cv/resume.pdf">Resume</a>
+				<a class="text-secondary underline" href="/cv/hoja-de-vida.pdf">Hoja de Vida</a>
+				<a class="text-secondary underline" href="/cv/europass.pdf">Europass CV</a>
+			</span>
+		</div>
+		<div class="flex md:flex-row flex-col md:gap-1 py-2">
 			<span class="font-bold"> E-mail address:</span>
 			<span>{email}</span>
 		</div>
@@ -25,7 +33,7 @@
 		</div>
 	</div>
 
-	<form class="flex flex-col w-full gap-4 py-4" name="contact" method="POST" netlify>
+	<form class="flex flex-col w-full gap-4 py-4" name="contact" method="POST" {...{ netlify: true }}>
 		<input type="hidden" name="form-name" value="contact" />
 		<span class="font-bold">Leave me a message:</span>
 		<div class="flex md:flex-row flex-col leading-8">
@@ -54,8 +62,7 @@
 				class="border-b-2 grow bg-transparent focus:outline-none focus:ring-0 h-40"
 				id="form-subject"
 				name="mensaje"
-				placeholder="La calle es una selva de cemento"
-			/>
+				placeholder="La calle es una selva de cemento"></textarea>
 		</div>
 		<div class="flex leading-8 justify-end">
 			<button

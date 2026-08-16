@@ -17,7 +17,10 @@
 			{site.author.email}
 		</a>
 		<span>
-			<a href="https://github.com/cazdlt/zamoradelatorre.com" class="text-primary hover:brightness-150">
+			<a
+				href="https://github.com/cazdlt/zamoradelatorre.com"
+				class="text-primary hover:brightness-150"
+			>
 				Hecho en el {current_year}
 			</a>
 			, basado en

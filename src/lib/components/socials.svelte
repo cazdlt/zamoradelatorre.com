@@ -40,7 +40,7 @@
 		},
 		mail: {
 			logo: faEnvelope,
-			url: (user) => '/contact'
+			url: () => '/contact'
 		}
 	};
 </script>
