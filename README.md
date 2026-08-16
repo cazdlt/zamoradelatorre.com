@@ -14,7 +14,10 @@ Personal blog and portfolio site built with [SvelteKit](https://kit.svelte.dev/)
 
 ## Getting started
 
+Requires **Node.js 24 (LTS)**. The repo pins it via `.nvmrc` (and `netlify.toml` sets `NODE_VERSION` for the Netlify build).
+
 ```bash
+nvm use        # switches to the pinned Node 24 LTS
 npm install
 npm run dev
 ```
