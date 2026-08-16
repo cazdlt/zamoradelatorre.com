@@ -35,7 +35,7 @@ npm run dev
 
 ## Deployment
 
-Netlify builds with `npm run build` and publishes the `build/` output (see `netlify.toml`). Pushing to `develop` triggers a deploy; the site uses SvelteKit's `prerender` with a serverless API route for the "what they say" endpoint.
+Netlify builds with `npm run build` and publishes the `build/` output (see `netlify.toml`). Pushing to `main` triggers a deploy; the site uses SvelteKit's `prerender` with a serverless API route for the "what they say" endpoint.
 
 ## Content
 
