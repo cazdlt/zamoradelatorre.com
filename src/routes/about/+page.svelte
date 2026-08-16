@@ -55,17 +55,17 @@
 			{/if}
 		</button>
 		{#if !!whatTheySayPromise}
-		<div class="h-8 pt-6">
-			{#await whatTheySayPromise}
-				...
-			{:then whatTheySay}
-				{#if !!whatTheySay}
-					{whatTheySay.frase}
-				{/if}
-			{:catch error}
-				<span class="text-red-600">{error.message}</span>
-			{/await}
-		</div>
+			<div class="h-8 pt-6">
+				{#await whatTheySayPromise}
+					...
+				{:then whatTheySay}
+					{#if !!whatTheySay}
+						{whatTheySay.frase}
+					{/if}
+				{:catch error}
+					<span class="text-red-600">{error.message}</span>
+				{/await}
+			</div>
 		{/if}
 	</div>
 </div>

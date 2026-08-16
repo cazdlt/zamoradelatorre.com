@@ -18,7 +18,7 @@
 </script>
 
 <div class="gallery mb-16 px-4 md:px-12">
-	{#each reviews as review, idx}
+	{#each reviews as review}
 		<div class="w-full text-center p-4 border-b-2 border-gray-200">
 			<img
 				class="w-full border border-gray-100 mb-4"
@@ -30,12 +30,13 @@
 				<div class="text-xl">{review.artist} ({review.year})</div>
 				<ul class="list-none uppercase text-xs font-semibold tracking-wider leading-7">
 					{#each review.genres as genre}
-						<li class="after:content-['/'] after:mx-2 inline-block after:last:content-[]">{genre}</li>
+						<li class="after:content-['/'] after:mx-2 inline-block after:last:content-[]">
+							{genre}
+						</li>
 					{/each}
 				</ul>
 			</div>
-			
-			
+
 			<div>{review.review}</div>
 			<div>
 				{#each getStars(review.score) as starIcon}

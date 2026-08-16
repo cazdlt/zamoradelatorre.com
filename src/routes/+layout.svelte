@@ -23,5 +23,5 @@
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro');
-	@import "../lib/styles/variables.css";
+	@import '../lib/styles/variables.css';
 </style>

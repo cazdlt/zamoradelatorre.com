@@ -26,7 +26,7 @@ export const about = {
 			why: [
 				'Sistema de autoregado y monitoreo de plantas para la casita en Paipa, Boyacá',
 				'Ideas de negocio alrededor de agrotech y smart homes hay bastantes',
-				'Aplicaciones de visión por computador',
+				'Aplicaciones de visión por computador'
 			]
 		},
 		{

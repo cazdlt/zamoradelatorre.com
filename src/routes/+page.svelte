@@ -35,7 +35,7 @@
 		grid-auto-rows: 1fr;
 		place-content: center;
 
-		@media screen(lg) {
+		@media (min-width: 1024px) {
 			grid-template-columns: 1fr 1fr;
 			grid-auto-rows: auto;
 		}

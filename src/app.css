@@ -1,4 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
 
+@theme inline {
+	--color-light: var(--light-color);
+	--color-dark: var(--dark-color);
+	--color-primary: var(--primary-color);
+	--color-secondary: var(--secondary-color);
+	--color-white: var(--white-color);
+	--font-sans: 'Source Sans Pro', ui-sans-serif, system-ui;
+}

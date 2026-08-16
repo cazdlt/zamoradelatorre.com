@@ -2,7 +2,7 @@ import type { PostMetadata, Post, MarkdownPost } from '$lib/types/post';
 import type { ComponentType } from 'svelte';
 
 type postGlobFiles = {
-	[key: string]: () => Promise<unknown>;
+	[key: string]: () => Promise<MarkdownPost>;
 };
 
 export const resolvePostFiles = async (allPostFiles: postGlobFiles) => {
@@ -41,16 +41,16 @@ export const getAllBlogPosts = async () => {
 };
 
 export const getAllPosts = async (): Promise<Post[]> => {
-	const postFiles = import.meta.glob('../data/posts/*.md');
+	const postFiles = import.meta.glob<MarkdownPost>('../data/posts/*.md');
 	const allPosts = await resolvePostFiles(postFiles);
 	return allPosts;
 };
 
 export const parseMarkdownPost = async (markdownPost: MarkdownPost) => {
 	const metadata: PostMetadata = markdownPost.metadata;
-	const layout = await import (`../components/postLayouts/${metadata.layout}.svelte`)
+	const layout = await import(`../components/postLayouts/${metadata.layout}.svelte`);
 	const PostComponent = markdownPost.default;
-	const PostLayout: ComponentType = layout.default
+	const PostLayout: ComponentType = layout.default;
 	return {
 		PostComponent,
 		PostLayout,

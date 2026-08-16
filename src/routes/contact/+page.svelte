@@ -33,7 +33,7 @@
 		</div>
 	</div>
 
-	<form class="flex flex-col w-full gap-4 py-4" name="contact" method="POST" netlify>
+	<form class="flex flex-col w-full gap-4 py-4" name="contact" method="POST" {...{ netlify: true }}>
 		<input type="hidden" name="form-name" value="contact" />
 		<span class="font-bold">Leave me a message:</span>
 		<div class="flex md:flex-row flex-col leading-8">
@@ -62,8 +62,7 @@
 				class="border-b-2 grow bg-transparent focus:outline-none focus:ring-0 h-40"
 				id="form-subject"
 				name="mensaje"
-				placeholder="La calle es una selva de cemento"
-			/>
+				placeholder="La calle es una selva de cemento"></textarea>
 		</div>
 		<div class="flex leading-8 justify-end">
 			<button

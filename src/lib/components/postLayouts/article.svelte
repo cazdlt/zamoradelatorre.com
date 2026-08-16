@@ -1,7 +1,4 @@
 <script lang="ts">
-	import type { PostMetadata } from '$lib/types/post';
-
-	export let metadata: PostMetadata;
 </script>
 
 <article
