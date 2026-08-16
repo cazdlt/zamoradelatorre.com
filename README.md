@@ -14,7 +14,10 @@ Personal blog and portfolio site built with [SvelteKit](https://kit.svelte.dev/)
 
 ## Getting started
 
+Requires **Node.js 24 (LTS)**. The repo pins it via `.nvmrc` (and `netlify.toml` sets `NODE_VERSION` for the Netlify build).
+
 ```bash
+nvm use        # switches to the pinned Node 24 LTS
 npm install
 npm run dev
 ```
@@ -32,7 +35,7 @@ npm run dev
 
 ## Deployment
 
-Netlify builds with `npm run build` and publishes the `build/` output (see `netlify.toml`). Pushing to `develop` triggers a deploy; the site uses SvelteKit's `prerender` with a serverless API route for the "what they say" endpoint.
+Netlify builds with `npm run build` and publishes the `build/` output (see `netlify.toml`). Pushing to `main` triggers a deploy; the site uses SvelteKit's `prerender` with a serverless API route for the "what they say" endpoint.
 
 ## Content
 
