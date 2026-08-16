@@ -20,6 +20,12 @@
 	<PageTitle title="About" />
 	<div class="italic">{summary}</div>
 
+	<div class="flex flex-row flex-wrap gap-4 py-4">
+		<a class="text-secondary underline" href="/cv/resume.pdf">Resume</a>
+		<a class="text-secondary underline" href="/cv/hoja-de-vida.pdf">Hoja de Vida</a>
+		<a class="text-secondary underline" href="/cv/europass.pdf">Europass CV</a>
+	</div>
+
 	<div>
 		<ul class="list-disc list-inside p-4">
 			{#each descriptionItems as description}

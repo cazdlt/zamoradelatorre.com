@@ -12,6 +12,14 @@
 	</div>
 	<div>
 		<div class="flex md:flex-row flex-col md:gap-1 py-2">
+			<span class="font-bold"> CV:</span>
+			<span class="flex flex-row gap-4">
+				<a class="text-secondary underline" href="/cv/resume.pdf">Resume</a>
+				<a class="text-secondary underline" href="/cv/hoja-de-vida.pdf">Hoja de Vida</a>
+				<a class="text-secondary underline" href="/cv/europass.pdf">Europass CV</a>
+			</span>
+		</div>
+		<div class="flex md:flex-row flex-col md:gap-1 py-2">
 			<span class="font-bold"> E-mail address:</span>
 			<span>{email}</span>
 		</div>
