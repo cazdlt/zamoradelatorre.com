@@ -1,7 +1,7 @@
 <script>
-	import Sidebar from '$lib/components/sidebar.svelte';
-	import Footer from '$lib/components/footer.svelte';
-	import Head from '$lib/components/Head.svelte';
+	import Sidebar from '#lib/components/sidebar.svelte';
+	import Footer from '#lib/components/footer.svelte';
+	import Head from '#lib/components/Head.svelte';
 	import '../app.css';
 </script>
 

@@ -2,7 +2,7 @@
 	import type { PageData } from './$types';
 	import * as _ from 'lodash-es';
 	import { format } from 'date-fns';
-	import PageTitle from '$lib/components/pageTitle.svelte';
+	import PageTitle from '#lib/components/pageTitle.svelte';
 
 	export let data: PageData;
 	const { posts } = data;

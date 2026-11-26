@@ -1,6 +1,6 @@
 <script lang="ts">
-	import PageTitle from '$lib/components/pageTitle.svelte';
-	import { about } from '$lib/data/about';
+	import PageTitle from '#lib/components/pageTitle.svelte';
+	import { about } from '#lib/data/about.ts';
 
 	const { descriptionItems, learning, summary } = about;
 

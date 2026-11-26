@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { PageDefinition } from '$lib/types/site';
-	import { pages } from '$lib/data/site';
-	import { title } from '$lib/stores/title';
+	import type { PageDefinition } from '#lib/types/site.d.ts';
+	import { pages } from '#lib/data/site.ts';
+	import { title } from '#lib/stores/title.ts';
 
 	type WithHome = { home: {} };
 	const homePages = pages.filter((p): p is PageDefinition & WithHome => p.home !== undefined);

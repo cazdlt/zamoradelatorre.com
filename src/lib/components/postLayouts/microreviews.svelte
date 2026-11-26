@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { allReviews } from '$lib/data/reviews';
+	import { allReviews } from '#lib/data/reviews.ts';
 	import Fa from 'svelte-fa';
 	import { faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
 	import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
-	import type { PostMetadata } from '$lib/types/post';
+	import type { PostMetadata } from '#lib/types/post.d.ts';
 
 	export let metadata: PostMetadata;
 

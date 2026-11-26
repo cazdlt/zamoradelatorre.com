@@ -1,5 +1,5 @@
-import type { PageDefinition } from '$lib/types/site';
-import type { Site } from '$lib/types/site';
+import type { PageDefinition } from '#lib/types/site.d.ts';
+import type { Site } from '#lib/types/site.d.ts';
 
 export const site: Site = {
 	author: {

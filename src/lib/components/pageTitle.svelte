@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { title as headTitle } from '$lib/stores/title';
+	import { title as headTitle } from '#lib/stores/title.ts';
 	export let title: string;
 	headTitle.set(title);
 </script>

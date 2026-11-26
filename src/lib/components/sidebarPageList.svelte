@@ -1,16 +1,17 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import type { PageDefinition } from '$lib/types/site';
+	import { page } from '$app/state';
+	import type { PageDefinition } from '#lib/types/site.d.ts';
 
-	export let pages: PageDefinition[];
+	let { pages }: { pages: PageDefinition[] } = $props();
 
-	$: inOnlyShowIn = (pag: PageDefinition) => {
+	let currentPath = $derived(page.url.pathname);
+
+	const inOnlyShowIn = (pag: PageDefinition) => {
 		let showIn = pag.onlyShowIn?.map((p) => p.replace('/', ''));
 		return showIn?.includes(currentPath.split('/')[1]);
 	};
 
-	$: currentPath = $page.url.pathname;
-	$: inCurrentPath = (pag: PageDefinition) => {
+	const inCurrentPath = (pag: PageDefinition) => {
 		if (pag.path == '/') {
 			return pag.path == currentPath;
 		}

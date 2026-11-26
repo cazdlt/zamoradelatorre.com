@@ -1,10 +1,10 @@
 <script lang="ts">
-	import PostListing from '$lib/components/postListing.svelte';
+	import PostListing from '#lib/components/postListing.svelte';
 	import type { PageData } from './$types';
 	export let data: PageData;
 	const posts = data.projects;
 
-	import { title } from '$lib/stores/title';
+	import { title } from '#lib/stores/title.ts';
 	title.set('Projects');
 </script>
 

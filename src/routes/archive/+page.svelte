@@ -3,7 +3,7 @@
 	import * as _ from 'lodash-es';
 	export let data: PageData;
 	import { format } from 'date-fns';
-	import PageTitle from '$lib/components/pageTitle.svelte';
+	import PageTitle from '#lib/components/pageTitle.svelte';
 
 	const { posts } = data;
 	let posts_by_year = _.groupBy(posts, (p) => p.date.getFullYear());

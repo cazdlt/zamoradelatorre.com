@@ -1,7 +1,7 @@
 <script lang="ts">
-	import PageTitle from '$lib/components/pageTitle.svelte';
-	import Socials from '$lib/components/socials.svelte';
-	import { site } from '$lib/data/site';
+	import PageTitle from '#lib/components/pageTitle.svelte';
+	import Socials from '#lib/components/socials.svelte';
+	import { site } from '#lib/data/site.ts';
 	const { phone, email, location } = site.author;
 </script>
 
@@ -68,8 +68,10 @@
 			<button
 				class="w-1/4 bg-secondary text-white border-b-2 grow focus:outline-none focus:ring-0 hover:brightness-150 rounded"
 				type="submit"
-				value="Send">Send</button
+				value="Send"
 			>
+				Send
+			</button>
 		</div>
 	</form>
 </div>

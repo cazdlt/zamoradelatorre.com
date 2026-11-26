@@ -1,12 +1,12 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import DateTagList from '$lib/components/dateTagList.svelte';
+	import DateTagList from '#lib/components/dateTagList.svelte';
 	export let data: PageData;
 
 	const { PostComponent, PostLayout, metadata } = data;
 	let { title, description, date, tags } = metadata;
 
-	import { title as headTitle } from '$lib/stores/title';
+	import { title as headTitle } from '#lib/stores/title.ts';
 	headTitle.set(metadata.title);
 </script>
 

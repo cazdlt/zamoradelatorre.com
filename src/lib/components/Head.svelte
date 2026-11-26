@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { title } from '$lib/stores/title';
+	import { title } from '#lib/stores/title.ts';
 </script>
 
 <svelte:head>

@@ -1,4 +1,4 @@
-import type { PostMetadata, Post, MarkdownPost } from '$lib/types/post';
+import type { PostMetadata, Post, MarkdownPost } from '#lib/types/post.d.ts';
 import type { ComponentType } from 'svelte';
 
 type postGlobFiles = {

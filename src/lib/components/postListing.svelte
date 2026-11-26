@@ -1,6 +1,6 @@
 <script lang="ts">
-	import DateTagList from '$lib/components/dateTagList.svelte';
-	import type { Post } from '$lib/types/post';
+	import DateTagList from '#lib/components/dateTagList.svelte';
+	import type { Post } from '#lib/types/post.d.ts';
 	export let posts: Post[];
 </script>
 
