@@ -29,13 +29,14 @@ export default [
 		]
 	},
 	js.configs.recommended,
+	...svelte.configs.recommended,
 	{
 		files: ['**/*.{js,mjs,cjs,ts}'],
 		languageOptions: {
 			parser: tsParser,
 			parserOptions: {
 				sourceType: 'module',
-				ecmaVersion: 2020
+				ecmaVersion: 'latest'
 			},
 			globals: {
 				...globals.browser,
@@ -57,7 +58,7 @@ export default [
 			parserOptions: {
 				parser: tsParser,
 				sourceType: 'module',
-				ecmaVersion: 2020
+				ecmaVersion: 'latest'
 			},
 			globals: {
 				...globals.browser,
@@ -65,12 +66,13 @@ export default [
 			}
 		},
 		plugins: {
-			svelte,
 			'@typescript-eslint': tsPlugin
 		},
 		rules: {
-			...noUnusedVars
+			...noUnusedVars,
+			'svelte/no-navigation-without-resolve': 'off'
 		}
 	},
-	prettier
+	prettier,
+	...svelte.configs.prettier
 ];

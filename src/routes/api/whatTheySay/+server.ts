@@ -1,10 +1,8 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler, RequestEvent } from './$types';
-import * as _ from 'lodash-es';
 import { about } from '#lib/data/about.ts';
 
 export const GET: RequestHandler = (_event: RequestEvent) => {
-	const body = { frase: _.shuffle(about.frases)[0] };
-	const response = json(body);
-	return response;
+	const frase = about.frases[Math.floor(Math.random() * about.frases.length)];
+	return json({ frase });
 };

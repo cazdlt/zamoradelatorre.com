@@ -1,11 +1,9 @@
 import { sveltekit } from '@sveltejs/kit/vite';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import adapter from '@sveltejs/adapter-netlify';
 import tailwindcss from '@tailwindcss/vite';
 import { mdsvex } from 'mdsvex';
 import { anchors } from '@mdsvex/plugin-anchors';
-import preprocess from 'svelte-preprocess';
-import postcssImport from 'postcss-import';
-import postcssNested from 'postcss-nested';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -23,16 +21,11 @@ export default defineConfig({
 			]
 		}),
 		sveltekit({
-			preprocess: [
-				preprocess({
-					postcss: {
-						plugins: [postcssImport(), postcssNested()]
-					}
-				})
-			],
+			preprocess: vitePreprocess(),
 			adapter: adapter({
 				split: true,
-				edge: false
+				edge: false,
+				nodeVersion: 'nodejs24.x'
 			})
 		})
 	]

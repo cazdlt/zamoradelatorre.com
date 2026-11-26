@@ -4,13 +4,13 @@
 
 	const { descriptionItems, learning, summary } = about;
 
-	const getFrase = async () => {
+	const getFrase = async (): Promise<{ frase: string }> => {
 		let response = await fetch('/api/whatTheySay');
 		let result = await response.json();
 		return result;
 	};
 
-	let whatTheySayPromise: Promise<any>;
+	let whatTheySayPromise = $state<Promise<{ frase: string }> | undefined>(undefined);
 	const handleButton = () => {
 		whatTheySayPromise = getFrase();
 	};
@@ -28,7 +28,7 @@
 
 	<div>
 		<ul class="list-disc list-inside p-4">
-			{#each descriptionItems as description}
+			{#each descriptionItems as description (description)}
 				<li>{description}</li>
 			{/each}
 		</ul>
@@ -36,10 +36,11 @@
 
 	<div>
 		<div class="font-bold text-2xl py-4">Aprendiendo</div>
-		{#each learning as skill}
+		{#each learning as skill (skill.what)}
 			<span class="font-bold text-lg">{skill.what}</span>
 			<ul class="list-disc list-inside px-4">
-				{#each skill.why as idea}
+				{#each skill.why as idea (idea)}
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 					<li>{@html idea}</li>
 				{/each}
 			</ul>
@@ -47,7 +48,7 @@
 	</div>
 
 	<div class="w-full text-center pt-8">
-		<button on:click={handleButton} class="bg-secondary text-white px-6 py-2 rounded text-md">
+		<button onclick={handleButton} class="bg-secondary text-white px-6 py-2 rounded text-md">
 			{#if !whatTheySayPromise}
 				¿Qué dicen de mí?
 			{:else}

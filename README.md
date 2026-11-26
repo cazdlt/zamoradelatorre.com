@@ -4,17 +4,17 @@ Personal blog and portfolio site built with [SvelteKit](https://svelte.dev/docs/
 
 ## Stack
 
-- **Svelte 5 / SvelteKit 3** — meta-framework and components (`#lib/*` subpath imports, config in `vite.config.js`)
-- **Vite 8** — build tooling
+- **Svelte 5 / SvelteKit 3** — meta-framework and runes components (`#lib/*` subpath imports, config in `vite.config.js`)
+- **Vite 8** — build tooling with `vitePreprocess` and native CSS nesting
 - **Tailwind CSS 4** — utility-first CSS (CSS-first config in `src/app.css`, Vite plugin in `vite.config.js`)
 - **mdsvex 1** — Markdown posts (`src/lib/data/posts/`) compiled via Vite plugin with heading anchors (`@mdsvex/plugin-anchors`)
 - **TypeScript 6** — type checking via `svelte-check`
-- **ESLint 10** (flat config `eslint.config.js`) + **Prettier**
-- **@sveltejs/adapter-netlify 7** — serverless adapter for Netlify
+- **ESLint 10** (flat config `eslint.config.js`, `eslint-plugin-svelte` recommended) + **Prettier**
+- **@sveltejs/adapter-netlify 7** — serverless adapter for Netlify (`nodejs24.x`)
 
 ## Getting started
 
-Requires **Node.js 24 (LTS)**. The repo pins it via `.nvmrc` (and `netlify.toml` sets `NODE_VERSION` for the Netlify build).
+Requires **Node.js 24** (Maintenance LTS — latest runtime supported by Netlify Functions / `@sveltejs/adapter-netlify`). The repo pins it via `.nvmrc` (and `netlify.toml` sets `NODE_VERSION` for the Netlify build).
 
 ```bash
 nvm use        # switches to the pinned Node 24 LTS

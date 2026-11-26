@@ -10,7 +10,7 @@
 </script>
 
 <div class="home-grid xl:px-24 py-2 max-w-[1200px] mx-auto min-h-screen">
-	{#each homePages as page}
+	{#each homePages as page (page.path)}
 		<div class="relative grid-item">
 			<img alt={page.home.description} class="h-full w-full object-cover" src={page.home.img} />
 			<span class="bottom-0 right-0 absolute p-1 opacity-0 text-white text-lg px-2">
@@ -27,7 +27,7 @@
 	{/each}
 </div>
 
-<style lang="postcss">
+<style>
 	.home-grid {
 		display: grid;
 		gap: 0.5rem;

@@ -20,7 +20,7 @@
 </script>
 
 <ul class="list-none m-0 p-0">
-	{#each pages as pag}
+	{#each pages as pag (pag.path)}
 		{#if !pag.onlyShowIn || inOnlyShowIn(pag) || inCurrentPath(pag)}
 			<li class="nav-item inline-block text-secondary text-sm">
 				<a
@@ -34,7 +34,7 @@
 	{/each}
 </ul>
 
-<style lang="postcss">
+<style>
 	.nav-item {
 		&::before {
 			content: '/ ';

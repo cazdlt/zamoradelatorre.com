@@ -1,32 +1,33 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import * as _ from 'lodash-es';
-	export let data: PageData;
-	import { format } from 'date-fns';
+	import { formatMonthDay } from '#lib/utils/date.ts';
 	import PageTitle from '#lib/components/pageTitle.svelte';
 
-	const { posts } = data;
-	let posts_by_year = _.groupBy(posts, (p) => p.date.getFullYear());
-	let sorted_posts_by_year = Object.entries(posts_by_year)
-		.map(([year, posts]) => ({
-			year: parseInt(year),
-			posts: _.sortBy(posts, ['date'])
-		}))
-		.sort((a, b) => b.year - a.year);
+	let { data }: { data: PageData } = $props();
+
+	let sorted_posts_by_year = $derived.by(() => {
+		const posts_by_year = Object.groupBy(data.posts, (p) => p.date.getFullYear());
+		return Object.entries(posts_by_year)
+			.map(([year, posts]) => ({
+				year: parseInt(year),
+				posts: (posts ?? []).toSorted((a, b) => a.date.getTime() - b.date.getTime())
+			}))
+			.toSorted((a, b) => b.year - a.year);
+	});
 </script>
 
 <div class="m-4 md:m-12">
 	<PageTitle title="Archive" />
 	<div class="timeline relative">
-		{#each sorted_posts_by_year as { year, posts }}
+		{#each sorted_posts_by_year as { year, posts } (year)}
 			<div class="text-left my-8">
 				<span id={year.toString()} class="year relative text-2xl font-bold px-4 text-primary">
 					{year}
 				</span>
 				<ul class="list-none px-4 md:px-12">
-					{#each posts as post}
+					{#each posts as post (post.path)}
 						<li class="mx-4 my-2">
-							<span>{format(post.date, 'MMM dd')}</span>
+							<span>{formatMonthDay(post.date)}</span>
 							<a class="hover:brightness-150 inline-block px-4 text-secondary" href={post.path}>
 								{post.title}
 							</a>

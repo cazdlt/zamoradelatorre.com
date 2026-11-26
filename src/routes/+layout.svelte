@@ -1,8 +1,12 @@
-<script>
+<script lang="ts">
 	import Sidebar from '#lib/components/sidebar.svelte';
 	import Footer from '#lib/components/footer.svelte';
 	import Head from '#lib/components/Head.svelte';
+	import type { Snippet } from 'svelte';
 	import '../app.css';
+	import '#lib/styles/variables.css';
+
+	let { children }: { children: Snippet } = $props();
 </script>
 
 <Head />
@@ -13,7 +17,7 @@
 	</div>
 	<div class="bg-white w-full px-4 md:px-8">
 		<div class="">
-			<slot />
+			{@render children()}
 		</div>
 		<div class="my-2">
 			<Footer />
@@ -23,5 +27,4 @@
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro');
-	@import '../lib/styles/variables.css';
 </style>

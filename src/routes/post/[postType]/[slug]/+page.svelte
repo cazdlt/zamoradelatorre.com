@@ -1,13 +1,18 @@
 <script lang="ts">
+	import { untrack } from 'svelte';
 	import type { PageData } from './$types';
 	import DateTagList from '#lib/components/dateTagList.svelte';
-	export let data: PageData;
-
-	const { PostComponent, PostLayout, metadata } = data;
-	let { title, description, date, tags } = metadata;
-
 	import { title as headTitle } from '#lib/stores/title.ts';
-	headTitle.set(metadata.title);
+
+	let { data }: { data: PageData } = $props();
+
+	let { PostComponent, PostLayout, metadata } = $derived(data);
+	let { title, description, date, tags } = $derived(metadata);
+
+	$effect.pre(() => {
+		headTitle.set(metadata.title);
+	});
+	headTitle.set(untrack(() => data.metadata.title));
 </script>
 
 <div>
