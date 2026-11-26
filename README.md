@@ -1,20 +1,20 @@
 # zamoradelatorre.com
 
-Personal blog and portfolio site built with [SvelteKit](https://kit.svelte.dev/). Deployed on [Netlify](https://www.netlify.com/).
+Personal blog and portfolio site built with [SvelteKit](https://svelte.dev/docs/kit). Deployed on [Netlify](https://www.netlify.com/).
 
 ## Stack
 
-- **Svelte 5 / SvelteKit 2** — meta-framework and components
-- **Vite 8** — build tooling
+- **Svelte 5 / SvelteKit 3** — meta-framework and runes components (`#lib/*` subpath imports, config in `vite.config.js`)
+- **Vite 8** — build tooling with `vitePreprocess` and native CSS nesting
 - **Tailwind CSS 4** — utility-first CSS (CSS-first config in `src/app.css`, Vite plugin in `vite.config.js`)
-- **mdsvex** — Markdown posts (`src/lib/data/posts/`) rendered as Svelte components
+- **mdsvex 1** — Markdown posts (`src/lib/data/posts/`) compiled via Vite plugin with heading anchors (`@mdsvex/plugin-anchors`)
 - **TypeScript 6** — type checking via `svelte-check`
-- **ESLint 10** (flat config `eslint.config.js`) + **Prettier**
-- **@sveltejs/adapter-netlify** — serverless adapter for Netlify
+- **ESLint 10** (flat config `eslint.config.js`, `eslint-plugin-svelte` recommended) + **Prettier**
+- **@sveltejs/adapter-netlify 7** — serverless adapter for Netlify (`nodejs24.x`)
 
 ## Getting started
 
-Requires **Node.js 24 (LTS)**. The repo pins it via `.nvmrc` (and `netlify.toml` sets `NODE_VERSION` for the Netlify build).
+Requires **Node.js 24** (Maintenance LTS — latest runtime supported by Netlify Functions / `@sveltejs/adapter-netlify`). The repo pins it via `.nvmrc` (and `netlify.toml` sets `NODE_VERSION` for the Netlify build).
 
 ```bash
 nvm use        # switches to the pinned Node 24 LTS
@@ -24,18 +24,18 @@ npm run dev
 
 ## Scripts
 
-| Command           | Description                                |
-| ----------------- | ------------------------------------------ |
-| `npm run dev`     | Start the dev server                       |
-| `npm run build`   | Production build (emits to `.svelte-kit/`) |
-| `npm run preview` | Preview the production build               |
-| `npm run check`   | `svelte-kit sync` + `svelte-check` (types) |
-| `npm run lint`    | Prettier check + ESLint                    |
-| `npm run format`  | Prettier write                             |
+| Command           | Description                                                                     |
+| ----------------- | ------------------------------------------------------------------------------- |
+| `npm run dev`     | Start the dev server                                                            |
+| `npm run build`   | Production build (emits static assets to `build/` and functions to `.netlify/`) |
+| `npm run preview` | Preview the production build                                                    |
+| `npm run check`   | `svelte-kit sync` + `svelte-check` (types)                                      |
+| `npm run lint`    | Prettier check + ESLint                                                         |
+| `npm run format`  | Prettier write                                                                  |
 
 ## Deployment
 
-Netlify builds with `npm run build` and publishes the `build/` output (see `netlify.toml`). Pushing to `master` triggers a deploy; the site uses SvelteKit's `prerender` with a serverless API route for the "what they say" endpoint.
+Netlify builds with `npm run build` and publishes the `build/` output (see `netlify.toml`). Pushing to `master` triggers a deploy; all routes are prerendered statically.
 
 ## Content
 

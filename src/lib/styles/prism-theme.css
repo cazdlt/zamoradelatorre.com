@@ -29,7 +29,8 @@
  */
 
 code[class*='language-'],
-pre[class*='language-'] {
+pre[class*='language-'],
+pre[class*='language-'] code {
 	background: hsl(230, 1%, 98%);
 	color: hsl(230, 8%, 24%);
 	font-family: 'Fira Code', 'Fira Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
@@ -79,6 +80,7 @@ pre[class*='language-'] {
 }
 
 .token.comment,
+.tok.comment,
 .token.prolog,
 .token.cdata {
 	color: hsl(230, 4%, 64%);
@@ -86,49 +88,72 @@ pre[class*='language-'] {
 
 .token.doctype,
 .token.punctuation,
+.tok.punctuation,
 .token.entity {
 	color: hsl(230, 8%, 24%);
 }
 
 .token.attr-name,
+.tok.attr_name,
 .token.class-name,
+.tok.class_name,
 .token.boolean,
+.tok.boolean,
 .token.constant,
+.tok.constant,
 .token.number,
-.token.atrule {
+.tok.number,
+.token.atrule,
+.tok.atrule {
 	color: hsl(35, 99%, 36%);
 }
 
-.token.keyword {
+.token.keyword,
+.tok.keyword {
 	color: hsl(301, 63%, 40%);
 }
 
 .token.property,
+.tok.property,
 .token.tag,
+.tok.tag,
 .token.symbol,
+.tok.symbol,
 .token.deleted,
-.token.important {
+.tok.deleted,
+.token.important,
+.tok.important {
 	color: hsl(5, 74%, 59%);
 }
 
 .token.selector,
+.tok.selector,
 .token.string,
+.tok.string,
 .token.char,
+.tok.char,
 .token.builtin,
+.tok.builtin,
 .token.inserted,
+.tok.inserted,
 .token.regex,
+.tok.regex,
 .token.attr-value,
 .token.attr-value > .token.punctuation {
 	color: hsl(119, 34%, 47%);
 }
 
 .token.variable,
+.tok.variable,
 .token.operator,
-.token.function {
+.tok.operator,
+.token.function,
+.tok.function {
 	color: hsl(221, 87%, 60%);
 }
 
-.token.url {
+.token.url,
+.tok.url {
 	color: hsl(198, 99%, 37%);
 }
 
@@ -224,12 +249,15 @@ pre[class*='language-'] {
 }
 
 /* General */
-.token.bold {
+.token.bold,
+.tok.bold {
 	font-weight: bold;
 }
 
 .token.comment,
-.token.italic {
+.tok.comment,
+.token.italic,
+.tok.italic {
 	font-style: italic;
 }
 
@@ -237,7 +265,8 @@ pre[class*='language-'] {
 	cursor: help;
 }
 
-.token.namespace {
+.token.namespace,
+.tok.namespace {
 	opacity: 0.8;
 }
 

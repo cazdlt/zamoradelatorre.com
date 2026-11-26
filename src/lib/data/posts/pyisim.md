@@ -188,9 +188,11 @@ rolinfo = {
 }
 rol = DynamicRole(s, role_attrs=rolinfo)
 rol.add(s)
-{% endhighlight %}
+```
+
 - Searching, modifying and then deleting static roles
-{% highlight python %}
+
+```python
 from pyisim.auth import Session
 from pyisim import search
 

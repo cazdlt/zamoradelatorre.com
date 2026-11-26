@@ -1,36 +1,39 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import * as _ from 'lodash-es';
-	import { format } from 'date-fns';
-	import PageTitle from '$lib/components/pageTitle.svelte';
+	import { formatIsoDate } from '#lib/utils/date.ts';
+	import PageTitle from '#lib/components/pageTitle.svelte';
+	import { lang } from '#lib/stores/lang.ts';
+	import { ui } from '#lib/data/i18n.ts';
 
-	export let data: PageData;
-	const { posts } = data;
-	const categories = _.uniq(posts.map((p) => (p.tags ? p.tags : null)).flat());
-	const posts_by_category = _.sortBy(
-		categories.map((c) => ({
-			category: c ?? 'untagged',
-			posts: _.sortBy(
-				posts.filter((p) => (c ? p.tags?.includes(c) : !p.tags)),
-				['date']
-			)
-		})),
-		['category']
-	);
+	let { data }: { data: PageData } = $props();
+
+	let postsByCategory = $derived.by(() => {
+		const categories = [...new Set(data.posts.flatMap((p) => (p.tags ? p.tags : [null])))];
+		return categories
+			.map((c) => ({
+				category: c ?? ui[$lang].untagged,
+				posts: data.posts
+					.filter((p) => (c ? p.tags?.includes(c) : !p.tags))
+					.toSorted((a, b) => b.date.getTime() - a.date.getTime())
+			}))
+			.toSorted((a, b) => a.category.localeCompare(b.category));
+	});
 </script>
 
-<div class="m-4 md:m-12">
-	<PageTitle title="Tags" />
-	{#each posts_by_category as { category, posts }}
+<div class="max-w-3xl mx-auto my-8 md:my-12 px-2">
+	<PageTitle title={ui[$lang].pages.tags} />
+	{#each postsByCategory as { category, posts } (category)}
 		<div class="text-left my-8">
-			<span id={category} class="year relative text-2xl font-bold px-4 text-primary">
+			<h2 id={category} class="text-2xl font-bold text-primary">
 				{category}
-			</span>
-			<ul class="list-none px-4 md:px-12">
-				{#each posts as post}
-					<li class="mx-4 my-2">
-						<span>{format(post.date, 'yyyy-MM-dd')}</span>
-						<a class="hover:brightness-150 inline-block px-4 text-secondary" href={post.path}>
+			</h2>
+			<ul class="list-none pl-2 md:pl-6 mt-3 space-y-2">
+				{#each posts as post (post.path)}
+					<li class="flex flex-wrap items-baseline gap-x-4 gap-y-0.5">
+						<span class="text-sm text-dark/60 font-mono shrink-0">
+							{formatIsoDate(post.date)}
+						</span>
+						<a class="text-secondary hover:underline" href={post.path}>
 							{post.title}
 						</a>
 					</li>

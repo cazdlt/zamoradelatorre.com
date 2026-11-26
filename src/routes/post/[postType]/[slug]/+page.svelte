@@ -1,25 +1,32 @@
 <script lang="ts">
+	import { untrack } from 'svelte';
 	import type { PageData } from './$types';
-	import DateTagList from '$lib/components/dateTagList.svelte';
-	export let data: PageData;
+	import DateTagList from '#lib/components/dateTagList.svelte';
+	import { title as headTitle } from '#lib/stores/title.ts';
 
-	const { PostComponent, PostLayout, metadata } = data;
-	let { title, description, date, tags } = metadata;
+	let { data }: { data: PageData } = $props();
 
-	import { title as headTitle } from '$lib/stores/title';
-	headTitle.set(metadata.title);
+	let { PostComponent, PostLayout, metadata } = $derived(data);
+	let { title, description, date, tags } = $derived(metadata);
+
+	$effect.pre(() => {
+		headTitle.set(metadata.title);
+	});
+	headTitle.set(untrack(() => data.metadata.title));
 </script>
 
 <div>
-	<div>
-		<div class="text-center my-12">
+	<div class="max-w-3xl mx-auto text-center my-10 md:my-12 px-2">
+		<div class="flex justify-center">
 			<DateTagList {date} {tags} />
-			<h1 class="text-5xl font-bold mt-8 mb-2">{title}</h1>
-			<span class="my-4 text-slate-500">{description}</span>
-			<hr class="my-12" />
 		</div>
-		<PostLayout {metadata}>
-			<PostComponent />
-		</PostLayout>
+		<h1 class="text-4xl md:text-5xl font-bold mt-6 mb-3 leading-tight">{title}</h1>
+		{#if description}
+			<p class="text-lg text-dark/65">{description}</p>
+		{/if}
+		<hr class="border-dark/15 my-10" />
 	</div>
+	<PostLayout {metadata}>
+		<PostComponent />
+	</PostLayout>
 </div>

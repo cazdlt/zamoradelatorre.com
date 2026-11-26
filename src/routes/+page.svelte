@@ -1,79 +1,63 @@
 <script lang="ts">
-	import type { PageDefinition } from '$lib/types/site';
-	import { pages } from '$lib/data/site';
-	import { title } from '$lib/stores/title';
+	import type { PageDefinition } from '#lib/types/site.d.ts';
+	import { pages } from '#lib/data/site.ts';
+	import { title } from '#lib/stores/title.ts';
+	import { lang } from '#lib/stores/lang.ts';
 
-	type WithHome = { home: {} };
+	type WithHome = { home: NonNullable<PageDefinition['home']> };
 	const homePages = pages.filter((p): p is PageDefinition & WithHome => p.home !== undefined);
 
-	title.set('Home');
+	title.reset();
 </script>
 
-<div class="home-grid xl:px-24 py-2 max-w-[1200px] mx-auto min-h-screen">
-	{#each homePages as page}
-		<div class="relative grid-item">
-			<img alt={page.home.description} class="h-full w-full object-cover" src={page.home.img} />
-			<span class="bottom-0 right-0 absolute p-1 opacity-0 text-white text-lg px-2">
-				{page.home.description}
-			</span>
-
-			<a
-				href={page.path}
-				class="w-full h-full flex items-center justify-center absolute top-0 left-0"
-			>
-				<span class="opacity-0 text-white font-bold text-3xl"> {page.title} </span>
-			</a>
-		</div>
+<div class="home-grid xl:px-20 py-10 max-w-[1160px] mx-auto min-h-screen">
+	{#each homePages as pag (pag.path)}
+		<a href={pag.path} class="grid-item group relative block aspect-[4/3] overflow-hidden bg-light">
+			<img
+				alt={pag.home.description}
+				class="h-full w-full object-cover transition-all duration-300 group-hover:grayscale"
+				src={pag.home.img}
+			/>
+			<div class="scrim absolute inset-0 transition-opacity duration-300" aria-hidden="true"></div>
+			<div class="absolute inset-x-0 bottom-0 flex items-baseline justify-between gap-2 px-4 py-3">
+				<span class="text-white text-lg md:text-xl font-normal tracking-wide drop-shadow-xs">
+					{pag.title[$lang]}
+				</span>
+				<span class="text-white/80 text-xs md:text-sm font-light drop-shadow-xs">
+					{pag.home.description}
+				</span>
+			</div>
+		</a>
 	{/each}
 </div>
 
-<style lang="postcss">
+<style>
 	.home-grid {
 		display: grid;
-		gap: 0.5rem;
+		gap: 0.6rem;
 		grid-template-columns: 1fr;
-		grid-auto-rows: 1fr;
-		place-content: center;
+		align-content: center;
 
-		@media (min-width: 1024px) {
+		@media (min-width: 768px) {
 			grid-template-columns: 1fr 1fr;
-			grid-auto-rows: auto;
 		}
 	}
 
-	.grid-item {
-		@media (hover: none) {
-			span,
-			a span {
-				opacity: 1;
-			}
+	.scrim {
+		background: linear-gradient(
+			to top,
+			hsla(0, 0%, 0%, 0.52) 0%,
+			hsla(0, 0%, 0%, 0.14) 36%,
+			transparent 65%
+		);
+	}
 
-			img {
-				filter: blur(1px);
-			}
-
-			a {
-				background: hsla(0, 0%, 0%, 0.5);
-			}
-		}
-
-		* {
-			transition: all 0.3s;
-		}
-
-		&:hover {
-			img {
-				filter: grayscale(100%) blur(1px);
-			}
-
-			a {
-				background: hsla(0, 0%, 0%, 0.4);
-			}
-
-			span,
-			a span {
-				opacity: 100;
-			}
-		}
+	.grid-item:hover .scrim {
+		background: linear-gradient(
+			to top,
+			hsla(0, 0%, 0%, 0.62) 0%,
+			hsla(0, 0%, 0%, 0.28) 50%,
+			hsla(0, 0%, 0%, 0.18) 100%
+		);
 	}
 </style>

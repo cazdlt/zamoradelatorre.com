@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+	<defs>
+		<clipPath id="tile">
+			<rect width="64" height="64" rx="14" />
+		</clipPath>
+		<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0%" stop-color="#37414f" />
+			<stop offset="46%" stop-color="#37414f" />
+			<stop offset="100%" stop-color="#4b454b" />
+		</linearGradient>
+	</defs>
+	<g clip-path="url(#tile)">
+		<rect width="64" height="44" fill="url(#sky)" />
+		<path
+			d="M0 34 C8 22, 16.5 17.5, 25 20 C32 22, 37 27.5, 44 26.5 C50.5 25.5, 57 30, 65 33 V46 H0 Z"
+			fill="#186688"
+		/>
+		<path d="M0 39 C10 33, 22 33.5, 33 39.5 L21 48 L0 48 Z" fill="#12506b" />
+		<rect x="36.8" y="32.4" width="6.2" height="10.6" rx="0.5" fill="#b23e32" />
+		<rect x="41.8" y="21.8" width="5.4" height="21.2" rx="0.6" fill="#d45143" />
+		<rect x="48.2" y="28.6" width="5.2" height="14.4" rx="0.5" fill="#b23e32" />
+		<rect x="41.8" y="21.8" width="1.7" height="21.2" rx="0.4" fill="#e06c5e" />
+		<path d="M0 42.0 C18 40.4, 38 40.8, 64 42.2 V64 H0 Z" fill="#232b34" />
+		<path
+			d="M11.5 28.8 C20.5 27.2, 33.6 27.0, 36.2 29.6 C38.5 32.0, 32.0 38.2, 25.6 47.2 C23.8 49.6, 25.8 50.9, 33.6 51.5 C43.8 52.3, 54.0 54.4, 65.0 59.4 L59.5 66.0 C46.5 60.4, 32.4 57.7, 20.0 56.2 C13.6 55.4, 12.6 50.7, 17.4 46.2 C23.4 40.4, 29.0 34.4, 30.4 32.0 C31.2 30.5, 21.5 29.4, 11.5 28.8 Z"
+			fill="#fffef9"
+		/>
+	</g>
+</svg>

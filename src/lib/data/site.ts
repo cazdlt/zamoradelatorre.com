@@ -1,5 +1,4 @@
-import type { PageDefinition } from '$lib/types/site';
-import type { Site } from '$lib/types/site';
+import type { PageDefinition, Site } from '#lib/types/site.d.ts';
 
 export const site: Site = {
 	author: {
@@ -13,19 +12,26 @@ export const site: Site = {
 			linkedin: 'cazdlt',
 			mail: 'cazdlt'
 		},
-		phone: '(+57) 318 560 8181',
+		phone: '(+57) 318 560 8101',
+		whatsapp: '573185608101',
 		location: 'Bogotá, Colombia'
 	}
 };
 
+export const cvLinks = [
+	{ label: 'Resume (EN)', href: '/cv/resume.pdf' },
+	{ label: 'Hoja de Vida (ES)', href: '/cv/hoja-de-vida.pdf' },
+	{ label: 'Europass CV', href: '/cv/europass.pdf' }
+] as const;
+
 export const pages: PageDefinition[] = [
 	{
-		title: 'home',
+		title: { en: 'home', es: 'inicio' },
 		path: '/',
 		mainSidebar: true
 	},
 	{
-		title: 'blog',
+		title: { en: 'blog', es: 'blog' },
 		path: '/blog',
 		mainSidebar: true,
 		home: {
@@ -34,7 +40,7 @@ export const pages: PageDefinition[] = [
 		}
 	},
 	{
-		title: 'projects',
+		title: { en: 'projects', es: 'proyectos' },
 		path: '/projects',
 		mainSidebar: true,
 		home: {
@@ -43,7 +49,7 @@ export const pages: PageDefinition[] = [
 		}
 	},
 	{
-		title: 'about',
+		title: { en: 'about', es: 'sobre mí' },
 		path: '/about',
 		mainSidebar: true,
 		home: {
@@ -52,7 +58,7 @@ export const pages: PageDefinition[] = [
 		}
 	},
 	{
-		title: 'contact',
+		title: { en: 'contact', es: 'contacto' },
 		path: '/contact',
 		mainSidebar: true,
 		home: {
@@ -61,14 +67,13 @@ export const pages: PageDefinition[] = [
 		}
 	},
 	{
-		title: 'archive',
+		title: { en: 'archive', es: 'archivo' },
 		path: '/archive',
 		mainSidebar: false,
 		onlyShowIn: ['/tags', '/blog', '/projects', '/post']
 	},
-
 	{
-		title: 'tags',
+		title: { en: 'tags', es: 'etiquetas' },
 		path: '/tags',
 		onlyShowIn: ['/archive', '/blog', '/projects', '/post'],
 		mainSidebar: false

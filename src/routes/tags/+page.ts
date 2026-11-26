@@ -1,4 +1,4 @@
-import { getAllPosts } from '$lib/utils/posts';
+import { getAllPosts } from '#lib/utils/posts.ts';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async () => {
