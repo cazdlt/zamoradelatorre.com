@@ -1,11 +1,14 @@
 <script lang="ts">
 	import PostListing from '#lib/components/postListing.svelte';
+	import PageTitle from '#lib/components/pageTitle.svelte';
 	import type { PageData } from './$types';
-	import { title } from '#lib/stores/title.ts';
+	import { lang } from '#lib/stores/lang.ts';
+	import { ui } from '#lib/data/i18n.ts';
 
 	let { data }: { data: PageData } = $props();
-
-	title.set('Blog');
 </script>
 
-<PostListing posts={data.blog} />
+<div class="max-w-3xl mx-auto my-8 md:my-12 px-2">
+	<PageTitle title={ui[$lang].pages.blog} />
+	<PostListing posts={data.blog} />
+</div>

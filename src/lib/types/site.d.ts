@@ -1,10 +1,15 @@
+export type Locale = 'es' | 'en';
+
+export type LocalizedText = Record<Locale, string>;
+
 export type Site = {
 	author: {
 		name: string;
 		fullName: string;
-		job?: string;
+		job?: LocalizedText;
 		email: string;
 		phone?: string;
+		whatsapp?: string;
 		location?: string;
 		socials: {
 			[key: string]: string;
@@ -13,7 +18,7 @@ export type Site = {
 };
 
 export type PageDefinition = {
-	title: string;
+	title: LocalizedText;
 	path: string;
 	mainSidebar: boolean;
 	onlyShowIn?: string[];

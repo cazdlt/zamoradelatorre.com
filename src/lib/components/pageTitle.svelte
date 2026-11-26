@@ -9,4 +9,4 @@
 	headTitle.set(untrack(() => title));
 </script>
 
-<h1 class="text-4xl font-bold my-8">{title}</h1>
+<h1 class="text-4xl font-semibold my-8">{title}</h1>

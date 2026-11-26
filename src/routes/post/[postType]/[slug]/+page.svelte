@@ -16,15 +16,17 @@
 </script>
 
 <div>
-	<div>
-		<div class="text-center my-12">
+	<div class="max-w-3xl mx-auto text-center my-10 md:my-12 px-2">
+		<div class="flex justify-center">
 			<DateTagList {date} {tags} />
-			<h1 class="text-5xl font-bold mt-8 mb-2">{title}</h1>
-			<span class="my-4 text-slate-500">{description}</span>
-			<hr class="my-12" />
 		</div>
-		<PostLayout {metadata}>
-			<PostComponent />
-		</PostLayout>
+		<h1 class="text-4xl md:text-5xl font-bold mt-6 mb-3 leading-tight">{title}</h1>
+		{#if description}
+			<p class="text-lg text-dark/65">{description}</p>
+		{/if}
+		<hr class="border-dark/15 my-10" />
 	</div>
+	<PostLayout {metadata}>
+		<PostComponent />
+	</PostLayout>
 </div>

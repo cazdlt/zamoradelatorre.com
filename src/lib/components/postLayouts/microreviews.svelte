@@ -19,13 +19,13 @@
 
 <div class="gallery mb-16 px-4 md:px-12">
 	{#each reviews as review (`${review.artist}-${review.album}`)}
-		<div class="w-full text-center p-4 border-b-2 border-gray-200">
+		<div class="w-full text-center p-4 border-b-2 border-dark/15">
 			<img
-				class="w-full border border-gray-100 mb-4"
+				class="w-full border border-dark/10 mb-4"
 				src="/img/posts/reviews/{review.cover}"
 				alt="{review.album} cover"
 			/>
-			<div class="mb-2 text-black">
+			<div class="mb-2 text-dark">
 				<div class="text-2xl font-bold">{review.album}</div>
 				<div class="text-xl">{review.artist} ({review.year})</div>
 				<ul class="list-none uppercase text-xs font-semibold tracking-wider leading-7">
@@ -43,7 +43,7 @@
 					<Fa class="inline-block my-2" icon={starIcon} />
 				{/each}
 			</div>
-			<div class="uppercase text-gray-500 my-2 text-xs tracking-wider font-semibold">
+			<div class="uppercase text-dark/60 my-2 text-xs tracking-wider font-semibold">
 				{review.date}
 			</div>
 		</div>
